@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.min.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" />
+
+ <link rel="stylesheet" href="public/css/boostrap_css/bootstrap.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" />
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link rel="stylesheet" href="public/styles.css">
+
+
+  <title>Dr. Fast</title>
+</head>
+
+<body >
+
+  <!-- This example requires Tailwind CSS v2.0+ -->
+  <div class="relative bg-gray-50 overflow-hidden" x-data="{ menuOpen: false }">
+    
+    <div class="hidden sm:block sm:absolute sm:inset-y-0 sm:h-full sm:w-full" " aria-hidden=" true">
+      
+      <div class="relative h-full max-w-7xl mx-auto">
+        
+        <svg class="absolute right-full transform translate-y-1/4 translate-x-1/4 lg:translate-x-1/2" width="404"
+          height="784" fill="none" viewBox="0 0 404 784">
+          <defs>
+            <pattern id="f210dbf6-a58d-4871-961e-36d5016a0f49" x="0" y="0" width="20" height="20"
+              patternUnits="userSpaceOnUse">
+              <rect x="0" y="0" width="4" height="4" class="text-gray-200" fill="currentColor" />
+            </pattern>
+          </defs>
+          <rect width="404" height="784" fill="url(#f210dbf6-a58d-4871-961e-36d5016a0f49)" />
+        </svg>
+        <svg
+          class="absolute left-full transform -translate-y-3/4 -translate-x-1/4 md:-translate-y-1/2 lg:-translate-x-1/2"
+          width="404" height="784" fill="none" viewBox="0 0 404 784">
+          <defs>
+            <pattern id="5d0dd344-b041-4d26-bec4-8d33ea57ec9b" x="0" y="0" width="20" height="20"
+              patternUnits="userSpaceOnUse">
+              <rect x="0" y="0" width="4" height="4" class="text-gray-200" fill="currentColor" />
+            </pattern>
+          </defs>
+          <rect width="404" height="784" fill="url(#5d0dd344-b041-4d26-bec4-8d33ea57ec9b)" />
+        </svg>
+      </div>
+    </div>
+
+    <div class="relative pt-6 pb-16 sm:pb-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <nav class="relative flex items-center justify-between sm:h-10 md:justify-center" aria-label="Global">
+          <div class="flex items-center flex-1 md:absolute md:inset-y-0 md:left-0">
+            <div class="flex items-center justify-between w-full md:w-auto">
+              <a href="#">
+                <span class="sr-only">Logo</span>
+                <img class=" mt-8 h-20 w-auto sm:h-44" src="public/img/thumbnail.png" alt="">
+              </a>
+              <div class="-mr-2 flex items-center md:hidden">
+                <button @click="menuOpen = true" type="button"
+                  class="bg-gray-50 rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-celeste"
+                  aria-expanded="false">
+                  <span class="sr-only">Open main menu</span>
+                  <!-- Heroicon name: outline/menu -->
+                  <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="hidden md:flex md:space-x-10">
+            <a href="#" class="font-medium text-gray-500 hover:text-celeste >Home</a>
+
+          <a href=" #" class="font-medium text-gray-500 hover:text-celeste">ABOUT</a>
+
+            <a href="#" class="font-medium text-gray-500 hover:text-celeste">FEATURE</a>
+
+            <a href="#" class="font-medium text-gray-500 hover:text-celeste">SCREENSHOT</a>
+            <a href="#" class="font-medium text-gray-500 hover:text-celeste">TEAM</a>
+          </div>
+          <div class="hidden md:absolute md:flex md:items-center md:justify-end md:inset-y-0 md:right-0">
+            <span class="inline-flex rounded-md shadow">
+              <a href="#"
+                class="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-celeste bg-white hover:bg-gray-50">
+               Lamanos
+              </a>
+            </span>
+          </div>
+        </nav>
+      </div>
+      <!-- <div class="relative" style="padding-top: 56.25%">
+        <iframe class="absolute inset-0 w-full h-full" src="https://www.youtube-nocookie.com/embed/FMrtSHAAPhM" frameborder="0" …></iframe>
+      </div> -->
+      <!--
+      Mobile menu, show/hide based on menu open state.
+
+      Entering: "duration-150 ease-out"
+        From: "opacity-0 scale-95"
+        To: "opacity-100 scale-100"
+      Leaving: "duration-100 ease-in"
+        From: "opacity-100 scale-100"
+        To: "opacity-0 scale-95"
+    -->
+      <div x-show="menuOpen" class="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden">
+        <div class="rounded-lg shadow-md bg-white ring-1 ring-black ring-opacity-5 overflow-hidden">
+          <div class="px-5 pt-4 flex items-center justify-between">
+            <div>
+              <img class="h-8 w-auto" src="ekko_logo.svg" alt="">
+            </div>
+            <div class="-mr-2">
+              <button @click="menuOpen = false" type="button"
+                class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-celeste">
+                <span class="sr-only">Close menu</span>
+                <!-- Heroicon name: outline/x -->
+                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="px-2 pt-2 pb-3">
+            <a href="#"
+              class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-celeste hover:bg-celeste">Product</a>
+
+            <a href="#"
+              class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-black hover:bg-celeste">Features</a>
+
+            <a href="#"
+              class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-black hover:bg-celeste">Marketplace</a>
+
+            <a href="#"
+              class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-black hover:bg-celeste">Company</a>
+          </div>
+          <a href="#" class="block w-full px-5 py-3 text-center font-medium text-celeste bg-gray-50 hover:bg-gray-100">
+            Log in
+          </a>
+        </div>
+      </div>
+
+      <main class="mt-16 mx-auto max-w-7xl px-4 sm:mt-24">
+        <div class="text-center ">
+          <h1 class="text-4xl tracking-tight font-extrabold text-black sm:text-5xl md:text-6xl">
+            <span class="block xl:inline">Los mejores doctores</span>
+            <span class="block text-celeste xl:inline">en tus manos</span>
+          </h1>
+          <p class="mt-3 max-w-md mx-auto text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
+            Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet
+            fugiat veniam occaecat fugiat aliqua.
+          </p>
+
+         
+            <div class="mt-5 max-w-md mx-auto sm:flex sm:justify-center md:mt-8">
+              <div class="rounded-md shadow">
+                <a href="#"
+                  class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-celeste hover:bg-dgreen md:py-4 md:text-lg md:px-10">
+                 Saber más!
+                </a>
+              </div>
+              <div class=" rounded-md  sm:mt-0 sm:ml-3">
+                <a href="#"
+               data-video="https://www.youtube.com/embed/YteVEb2AsgM" data-toggle="modal" data-target="#videoModal" class="w-full video flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md 
+                ext-celeste bg-white hover:bg-gray-50 md:py-4 md:text-lg md:px-10" ">
+                  Live demo
+                </a>
+              </div>
+            </div>
+            <div class="grid grid-col-2   ">
+            <div class="mt-5 max-w-md mx-auto sm:flex sm:justify-center md:mt-8 grid grid grid-cols-2 ">
+          
+              <a href="https://apps.apple.com/ni/app/candy-crush-saga/id553834731" target="_blank" >
+              <img class="h-10" src="public/img/itunes-app-store-logo-e1508928959717.png" alt="">
+             </a>
+             <a href="https://apps.apple.com/ni/app/candy-crush-saga/id553834731">
+              <img class="h-12 -mt-1" src="public/img/Daco_1147665.png" target="_blank" alt="app">
+            </a>
+            </div>
+          </div>
+
+          
+    
+        </div>
+
+        </div>
+      </main>
+    </div>
+  </div>
+
+
+ <!-- VIDEO MODAL -->
+ <div class="modal fade" id="videoModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button class="close" data-dismiss="modal">
+          <span>&times;</span>
+        </button>
+        <iframe src="" frameborder="0" height="350" width="100%" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<!-- idk yet section  -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="relative pt-16 pb-32 overflow-hidden">
+  <div aria-hidden="true" class="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-gray-100"></div>
+  <div class="relative">
+    <div class="lg:mx-auto lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-2 lg:grid-flow-col-dense lg:gap-24">
+      <div class="px-4 max-w-xl mx-auto sm:px-6 lg:py-16 lg:max-w-none lg:mx-0 lg:px-0">
+        <div>
+          <div>
+            <span class="h-12 w-12 rounded-md flex items-center justify-center bg-gradient-to-r from-celeste to-blue-500">
+              <!-- Heroicon name: outline/inbox -->
+              <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4" />
+              </svg>
+            </span>
+          </div>
+          <div class="mt-6">
+            <h2 class="text-3xl font-extrabold tracking-tight text-gray-900">
+              Atencion al cliente
+            </h2>
+            <p class="mt-4 text-lg text-gray-500">
+              Semper curabitur ullamcorper posuere nunc sed. Ornare iaculis bibendum malesuada faucibus lacinia porttitor. Pulvinar laoreet sagittis viverra duis. In venenatis sem arcu pretium pharetra at. Lectus viverra dui tellus ornare pharetra.
+            </p>
+            <div class="mt-6">
+              <a href="#" class="inline-flex px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-gradient-to-r from-celeste to-blue-500 hover:from-purple-700 hover:to-celeste">
+                Empieza
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="mt-8 border-t border-gray-200 pt-6">
+          <blockquote>
+            <div>
+              <p class="text-base text-gray-500">
+                &ldquo;Cras velit quis eros eget rhoncus lacus ultrices sed diam. Sit orci risus aenean curabitur donec aliquet. Mi venenatis in euismod ut.&rdquo;
+              </p>
+            </div>
+            <footer class="mt-3">
+              <div class="flex items-center space-x-3">
+                <div class="flex-shrink-0">
+                  <img class="h-6 w-6 rounded-full" src="https://images.unsplash.com/photo-1618018353335-97ebcde0c2cc?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=358&q=80" alt="">
+                </div>
+                <div class="text-base font-medium text-gray-700">
+                  Isaias, Ing Software
+                </div>
+              </div>
+            </footer>
+          </blockquote>
+        </div>
+      </div>
+      <div class="mt-12 sm:mt-16 lg:mt-0">
+        <div class="pl-4 -mr-48 sm:pl-6 md:-mr-16 lg:px-0 lg:m-0 lg:relative lg:h-full">
+          <img class="h-96 md:h-1/4 rounded-xl shadow-xl ring-1 ring-black ring-opacity-5 lg:absolute lg:left-0 lg:h-full lg:w-auto " src="public/img/cell.png" alt="Inbox user interface">
+        </div>
+
+        
+      </div>
+    </div>
+  </div>
+  <div class="mt-24">
+    <div class="lg:mx-auto lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-2 lg:grid-flow-col-dense lg:gap-24">
+      <div class="px-4 max-w-xl mx-auto sm:px-6 lg:py-32 lg:max-w-none lg:mx-0 lg:px-0 lg:col-start-2">
+        <div>
+          <div>
+            <span class="h-12 w-12 rounded-md flex items-center justify-center bg-gradient-to-r from-celeste to-blue-500">
+              <!-- Heroicon name: outline/sparkles -->
+              <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+              </svg>
+            </span>
+          </div>
+          <div class="mt-6">
+            <h2 class="text-3xl font-extrabold tracking-tight text-gray-900">
+             Atencion personalizada a pacientes
+            </h2>
+            <p class="mt-4 text-lg text-gray-500">
+              Semper curabitur ullamcorper posuere nunc sed. Ornare iaculis bibendum malesuada faucibus lacinia porttitor. Pulvinar laoreet sagittis viverra duis. In venenatis sem arcu pretium pharetra at. Lectus viverra dui tellus ornare pharetra.
+            </p>
+            <div class="mt-6">
+              <a href="#" class="inline-flex px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-gradient-to-r from-celeste to-blue-500 hover:from-purple-700 hover:to-celeste">
+                Get started
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mt-12 sm:mt-16 lg:mt-0 lg:col-start-1">
+        <div class="pr-4 -ml-48 sm:pr-6 md:-ml-16 lg:px-0 lg:m-0 lg:relative lg:h-full">
+          <img class="w-full rounded-xl shadow-xl ring-1 ring-black ring-opacity-5 lg:absolute lg:right-0 lg:h-full lg:w-auto lg:max-w-none" src="https://tailwindui.com/img/component-images/inbox-app-screenshot-2.jpg" alt="Customer profile user interface">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+  <!-- Aspects section -->
+
+  <!-- This example requires Tailwind CSS v2.0+ -->
+  <div class=" relative bg-white py-16 sm:py-16 lg:py-8">
+    <div class="mx-auto max-w-md px-4 text-center sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl">
+
+      <div class=" absolute opacity-10 ml-0 feature-phone"><img class=" ml-0 " src="img/cell.png" alt="" ></div>
+      <p class="mt-2 text-3xl font-extrabold text-gray-900 tracking-tight sm:text-4xl">
+        Características
+      </p>
+      <p class="mt-5 max-w-prose mx-auto text-xl text-gray-500">
+        Phasellus lorem quam molestie id quisque diam aenean nulla in. Accumsan in quis quis nunc, ullamcorper
+        malesuada. Eleifend condimentum id viverra nulla.
+      </p>
+      <div class="mt-12">
+        <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <div class="pt-6">
+            <div class="flow-root bg-gray-50 rounded-lg px-6 pb-8">
+              <div class="-mt-6">
+                <div>
+                  <span class="inline-flex items-center justify-center p-3 bg-celeste rounded-md shadow-lg">
+                    <!-- Heroicon name: outline/cloud-upload -->
+                    <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                      stroke="currentColor" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                    </svg>
+                  </span>
+                </div>
+                <h3 class="mt-8 text-lg font-medium text-gray-900 tracking-tight">Push to Deploy</h3>
+                <p class="mt-5 text-base text-gray-500">
+                  Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-6">
+            <div class="flow-root bg-gray-50 rounded-lg px-6 pb-8">
+              <div class="-mt-6">
+                <div>
+                  <span class="inline-flex items-center justify-center p-3 bg-celeste rounded-md shadow-lg">
+                    <!-- Heroicon name: outline/lock-closed -->
+                    <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                      stroke="currentColor" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                    </svg>
+                  </span>
+                </div>
+                <h3 class="mt-8 text-lg font-medium text-gray-900 tracking-tight">SSL Certificates</h3>
+                <p class="mt-5 text-base text-gray-500">
+                  Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-6">
+            <div class="flow-root bg-gray-50 rounded-lg px-6 pb-8">
+              <div class="-mt-6">
+                <div>
+                  <span class="inline-flex items-center justify-center p-3 bg-celeste rounded-md shadow-lg">
+                    <!-- Heroicon name: outline/refresh -->
+                    <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                      stroke="currentColor" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                    </svg>
+                  </span>
+                </div>
+                <h3 class="mt-8 text-lg font-medium text-gray-900 tracking-tight">Simple Queues</h3>
+                <p class="mt-5 text-base text-gray-500">
+                  Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-6">
+            <div class="flow-root bg-gray-50 rounded-lg px-6 pb-8">
+              <div class="-mt-6">
+                <div>
+                  <span class="inline-flex items-center justify-center p-3 bg-celeste rounded-md shadow-lg">
+                    <!-- Heroicon name: outline/shield-check -->
+                    <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                      stroke="currentColor" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                  </span>
+                </div>
+                <h3 class="mt-8 text-lg font-medium text-gray-900 tracking-tight">Advanced Security</h3>
+                <p class="mt-5 text-base text-gray-500">
+                  Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-6">
+            <div class="flow-root bg-gray-50 rounded-lg px-6 pb-8">
+              <div class="-mt-6">
+                <div>
+                  <span class="inline-flex items-center justify-center p-3 bg-celeste rounded-md shadow-lg">
+                    <!-- Heroicon name: outline/cog -->
+                    <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                      stroke="currentColor" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                  </span>
+                </div>
+                <h3 class="mt-8 text-lg font-medium text-gray-900 tracking-tight">Powerful API</h3>
+                <p class="mt-5 text-base text-gray-500">
+                  Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-6">
+            <div class="flow-root bg-gray-50 rounded-lg px-6 pb-8">
+              <div class="-mt-6">
+                <div>
+                  <span class="inline-flex items-center justify-center p-3 bg-celeste rounded-md shadow-lg">
+                    <!-- Heroicon name: outline/server -->
+                    <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                      stroke="currentColor" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
+                    </svg>
+                  </span>
+                </div>
+                <h3 class="mt-8 text-lg font-medium text-gray-900 tracking-tight">Database Backups</h3>
+                <p class="mt-5 text-base text-gray-500">
+                  Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+<!-- This example requires Tailwind CSS v2.0+ -->
+<div class="bg-gray-50 ">
+  <div class="pt-12 px-4 sm:px-6 lg:px-8 lg:pt-20">
+    <div class="text-center">
+      <h2 class="text-3xl leading-6 font-semibold text-dgreen uppercase tracking-wider">
+        Precios
+      </h2>
+      <p class="mt-2 text-3xl font-extrabold text-dark sm:text-4xl lg:text-5xl">
+        The right price for you, whoever you are
+      </p>
+      <p class="mt-3 max-w-4xl mx-auto text-xl text-dgreen sm:mt-5 sm:text-2xl">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit numquam eligendi quos odit doloribus molestiae voluptatum.
+      </p>
+    </div>
+  </div>
+
+  <div class="mt-16 bg-white pb-12 lg:mt-20 lg:pb-20">
+    <div class="relative z-0">
+      <div class="absolute inset-0 h-5/6 bg-gradient-to-r from-celeste via-blue-200 to-celeste lg:h-2/3"></div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="relative lg:grid lg:grid-cols-7">
+          <div class="mx-auto max-w-md lg:mx-0 lg:max-w-none lg:col-start-1 lg:col-end-3 lg:row-start-2 lg:row-end-3">
+            <div class="h-full flex flex-col rounded-lg shadow-lg overflow-hidden lg:rounded-none lg:rounded-l-lg">
+              <div class="flex-1 flex flex-col">
+                <div class="bg-white px-6 py-10">
+                  <div>
+                    <h3 class="text-center text-2xl font-medium text-gray-900" id="tier-hobby">
+                      Doc alpha
+                    </h3>
+                    <div class="mt-4 flex items-center justify-center">
+                      <span class="px-3 flex items-start text-6xl tracking-tight text-gray-900">
+                        <span class="mt-2 mr-2 text-4xl font-medium">
+                          S/
+                        </span>
+                        <span class="font-extrabold">
+                          79
+                        </span>
+                      </span>
+                      <span class="text-xl font-medium text-gray-500">
+                        /mes
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex-1 flex flex-col justify-between border-t-2 border-gray-100 p-6 bg-gray-50 sm:p-10 lg:p-6 xl:p-10">
+                  <ul class="space-y-4">
+                    <li class="flex items-start">
+                      <div class="flex-shrink-0">
+                        <!-- Heroicon name: outline/check -->
+                        <svg class="flex-shrink-0 h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                      </div>
+                      <p class="ml-3 text-base font-medium text-gray-500">
+                        Pariatur quod similique
+                      </p>
+                    </li>
+
+                    <li class="flex items-start">
+                      <div class="flex-shrink-0">
+                        <!-- Heroicon name: outline/check -->
+                        <svg class="flex-shrink-0 h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                      </div>
+                      <p class="ml-3 text-base font-medium text-gray-500">
+                        Sapiente libero doloribus
+                      </p>
+                    </li>
+
+                    <li class="flex items-start">
+                      <div class="flex-shrink-0">
+                        <!-- Heroicon name: outline/check -->
+                        <svg class="flex-shrink-0 h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                      </div>
+                      <p class="ml-3 text-base font-medium text-gray-500">
+                        Vel ipsa esse repudiandae
+                      </p>
+                    </li>
+                  </ul>
+                  <div class="mt-8">
+                    <div class="rounded-lg shadow-md">
+                      <a href="#" class="block w-full text-center rounded-lg border border-transparent bg-white px-6 py-3 text-base font-medium text-celeste hover:bg-gray-50" aria-describedby="tier-hobby">
+                        Adquirir
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mt-10 max-w-lg mx-auto lg:mt-0  lg:max-w-none lg:mx-0 lg:col-start-3 lg:col-end-6 lg:row-start-1 lg:row-end-4">
+            <div class="relative z-10 rounded-lg shadow-xl">
+              <div class="pointer-events-none absolute inset-0 rounded-lg border-2 border-dgreen" aria-hidden="true"></div>
+              <div class="absolute inset-x-0 top-0 transform translate-y-px">
+                <div class="flex justify-center transform -translate-y-1/2">
+                  <span class="inline-flex rounded-full bg-celeste px-4 py-1 text-sm font-semibold tracking-wider uppercase text-white">
+                    Most popular
+                  </span>
+                </div>
+              </div>
+              <div class="bg-white rounded-t-lg px-6 pt-12 pb-10">
+                <div>
+                  <h3 class="text-center text-3xl font-semibold text-gray-900 sm:-mx-6" id="tier-growth">
+                    Suscription 
+                  </h3>
+                  <div class="mt-4 flex items-center justify-center">
+                    <span class="px-3 flex items-start text-6xl tracking-tight text-gray-900 sm:text-6xl">
+                      <span class="mt-2 mr-2 text-4xl font-medium">
+                        S/
+                      </span>
+                      <span class="font-extrabold">
+                        149
+                      </span>
+                    </span>
+                    <span class="text-2xl font-medium text-gray-500">
+                      /mes
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="border-t-2 border-gray-100 rounded-b-lg pt-10 pb-8 px-6 bg-gray-50 sm:px-10 sm:py-10">
+                <ul class="space-y-4">
+                  <li class="flex items-start">
+                    <div class="flex-shrink-0">
+                      <!-- Heroicon name: outline/check -->
+                      <svg class="flex-shrink-0 h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <p class="ml-3 text-base font-medium text-gray-500">
+                      Quia rem est sed impedit magnam
+                    </p>
+                  </li>
+
+                  <li class="flex items-start">
+                    <div class="flex-shrink-0">
+                      <!-- Heroicon name: outline/check -->
+                      <svg class="flex-shrink-0 h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <p class="ml-3 text-base font-medium text-gray-500">
+                      Dolorem vero ratione voluptates
+                    </p>
+                  </li>
+
+                  <li class="flex items-start">
+                    <div class="flex-shrink-0">
+                      <!-- Heroicon name: outline/check -->
+                      <svg class="flex-shrink-0 h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <p class="ml-3 text-base font-medium text-gray-500">
+                      Qui sed ab doloribus voluptatem dolore
+                    </p>
+                  </li>
+
+                  <li class="flex items-start">
+                    <div class="flex-shrink-0">
+                      <!-- Heroicon name: outline/check -->
+                      <svg class="flex-shrink-0 h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <p class="ml-3 text-base font-medium text-gray-500">
+                      Laborum commodi molestiae id et fugiat
+                    </p>
+                  </li>
+
+                  <li class="flex items-start">
+                    <div class="flex-shrink-0">
+                      <!-- Heroicon name: outline/check -->
+                      <svg class="flex-shrink-0 h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <p class="ml-3 text-base font-medium text-gray-500">
+                      Nam ut ipsa nesciunt culpa modi dolor
+                    </p>
+                  </li>
+                </ul>
+                <div class="mt-10">
+                  <div class="rounded-lg shadow-md">
+                    <a href="#" class="block w-full text-center rounded-lg border border-transparent bg-celeste px-6 py-4 text-xl leading-6 font-medium text-white hover:bg-celeste" aria-describedby="tier-growth">
+                      Adquirir
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mt-10 mx-auto max-w-md lg:m-0 lg:max-w-none lg:col-start-6 lg:col-end-8 lg:row-start-2 lg:row-end-3">
+            <div class="h-full flex flex-col rounded-lg shadow-lg overflow-hidden lg:rounded-none lg:rounded-r-lg">
+              <div class="flex-1 flex flex-col">
+                <div class="bg-white px-6 py-10">
+                  <div>
+                    <h3 class="text-center text-2xl font-medium text-gray-900" id="tier-scale">
+                      Scale
+                    </h3>
+                    <div class="mt-4 flex items-center justify-center">
+                      <span class="px-3 flex items-start text-6xl tracking-tight text-gray-900">
+                        <span class="mt-2 mr-2 text-4xl font-medium">
+                          S/
+                        </span>
+                        <span class="font-extrabold">
+                          349
+                        </span>
+                      </span>
+                      <span class="text-xl font-medium text-gray-500">
+                        /mes
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex-1 flex flex-col justify-between border-t-2 border-gray-100 p-6 bg-gray-50 sm:p-10 lg:p-6 xl:p-10">
+                  <ul class="space-y-4">
+                    <li class="flex items-start">
+                      <div class="flex-shrink-0">
+                        <!-- Heroicon name: outline/check -->
+                        <svg class="flex-shrink-0 h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                      </div>
+                      <p class="ml-3 text-base font-medium text-gray-500">
+                        Pariatur quod similique
+                      </p>
+                    </li>
+
+                    <li class="flex items-start">
+                      <div class="flex-shrink-0">
+                        <!-- Heroicon name: outline/check -->
+                        <svg class="flex-shrink-0 h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                      </div>
+                      <p class="ml-3 text-base font-medium text-gray-500">
+                        Sapiente libero doloribus
+                      </p>
+                    </li>
+
+                    <li class="flex items-start">
+                      <div class="flex-shrink-0">
+                        <!-- Heroicon name: outline/check -->
+                        <svg class="flex-shrink-0 h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                      </div>
+                      <p class="ml-3 text-base font-medium text-gray-500">
+                        Vel ipsa esse repudiandae
+                      </p>
+                    </li>
+                  </ul>
+                  <div class="mt-8">
+                    <div class="rounded-lg shadow-md">
+                      <a href="#" class="block w-full text-center rounded-lg border border-transparent bg-white px-6 py-3 text-base font-medium text-celeste hover:bg-gray-50" aria-describedby="tier-scale">
+                        Adquirir
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.js"></script>
+    <script>
+      // Get the current year for the copyright
+      S/('#year').text(new Date().getFullYear());
+  
+      // Configure Slider
+      S/('.carousel').carousel({
+        interval: 6000,
+        pause: 'hover'
+      });
+  
+      // Lightbox Init
+      S/(document).on('click', '[data-toggle="lightbox"]', function (event) {
+        event.preventDefault();
+        S/(this).ekkoLightbox();
+      });
+  
+      // Video Play
+      S/(function () {
+        // Auto play modal video
+        S/(".video").click(function () {
+          var theModal = S/(this).data("target"),
+            videoSRC = S/(this).attr("data-video"),
+            videoSRCauto = videoSRC + "?modestbranding=1&rel=0&controls=0&showinfo=0&html5=1&autoplay=1";
+          S/(theModal + ' iframe').attr('src', videoSRCauto);
+          S/(theModal + ' button.close').click(function () {
+            S/(theModal + ' iframe').attr('src', videoSRC);
+          });
+        });
+      });
+  
+    </script>
+  <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+</body>
+
+</html>
+
