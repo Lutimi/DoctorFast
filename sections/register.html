@@ -12,6 +12,7 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" />
 
+  <link rel="stylesheet" href="../public/css/modals_carroussels/modals.css">
 
   <link rel="stylesheet" href="../public/styles.css">
   <link rel="icon" class="h-8 w-8" type="public/img/mini.ico" href="../public/img/mini.ico">
@@ -67,13 +68,13 @@
             </div>
           </div>
           <div class="hidden md:flex md:space-x-10">
-            <a href="#" class="font-medium text-gray-500 hover:text-celeste">INICIO</a>
+            <a href="../index.html" class="font-medium text-gray-500 hover:text-celeste">INICIO</a>
 
-            <a href=" #" class="font-medium text-gray-500 hover:text-celeste">ACERCA</a>
+            <a href=" ../index.html" class="font-medium text-gray-500 hover:text-celeste">ACERCA</a>
 
-            <a href="#" class="font-medium text-gray-500 hover:text-celeste">PLANES</a>
+            <a href="../index.html" class="font-medium text-gray-500 hover:text-celeste">PLANES</a>
 
-            <a href="#" class="font-medium text-gray-500 hover:text-celeste">CLIENTES</a>
+            <a href="../index.html" class="font-medium text-gray-500 hover:text-celeste">CLIENTES</a>
 
           </div>
           <div class="hidden md:absolute md:flex md:items-center md:justify-end md:inset-y-0 md:right-0">
@@ -121,15 +122,16 @@
             <a href="../index.html"
               class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-black hover:bg-celeste">INICIO</a>
 
-            <a href="#plans"
+            <a href="../index.html"
               class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-black hover:bg-celeste">Planes</a>
 
-            <a href="#"
+            <a href="../index.html"
               class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-black hover:bg-celeste">Ventajas</a>
 
 
           </div>
-          <a href="#" class="block w-full px-5 py-3 text-center font-medium text-celeste bg-gray-50 hover:bg-gray-100">
+          <a href="../index.html"
+            class="block w-full px-5 py-3 text-center font-medium text-celeste bg-gray-50 hover:bg-gray-100">
             Log in
           </a>
         </div>
@@ -174,7 +176,7 @@
                           xmlns=" http://www.w3.org/2000/svg ">
                           <path d=" M-99 461.107L608.107-246l707.103 707.107-707.103 707.103L-99 461.107z "
                             fill=" url(#linear1) " fill-opacity=" .1 " />
-                     
+
                         </svg>
                       </div>
                       <div class=" hidden absolute top-0 right-0 bottom-0 w-1/2 pointer-events-none sm:block lg:hidden "
@@ -185,7 +187,7 @@
                           <path d=" M-161 382.107L546.107-325l707.103 707.107-707.103 707.103L-161 382.107z "
                             fill=" url(#linear2) " fill-opacity=" .1 " />
                           <defs>
-                       
+
                           </defs>
                         </svg>
                       </div>
@@ -197,7 +199,7 @@
                           <path d=" M-161 679.107L546.107-28l707.103 707.107-707.103 707.103L-161 679.107z "
                             fill=" url(#linear3) " fill-opacity=" .1 " />
                           <defs>
-                        
+
                           </defs>
                         </svg>
                       </div>
@@ -261,145 +263,100 @@
                       <h3 class=" text-lg font-medium text-warm-gray-900 ">Registro de usuario</h3>
 
 
-                      <form action=" # " class=" mt-6 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8 ">
-                            <div>
-                              <label for="nombre"  class=" block text-sm font-medium text-warm-gray-900 ">Nombre
-                                </label>
-                              <div class=" mt-1 ">
-                                <input type="text"  id="nombre" autocomplete=" given-name "
-                                  class=" py-3 px-4 block w-full shadow-sm text-warm-gray-900 focus:ring-celeste focus:border-celeste border-warm-gray-300 rounded-md ">
-                              </div>
-                            </div>
-                            <div>
-                              <label for="apellido" class=" block text-sm font-medium text-warm-gray-900 ">Apellido</label>
-                              <div class=" mt-1 ">
-                                <input type="text"  id="apellido" autocomplete=" family-name "
-                                  class=" py-3 px-4 block w-full shadow-sm text-warm-gray-900 focus:ring-celeste focus:border-celeste border-warm-gray-300 rounded-md ">
-                              </div>
-                            </div>
-                            <div>
-                              <label for="email" class=" block text-sm font-medium text-warm-gray-900 ">Email</label>
-                              <div class=" mt-1 ">
-                                <input id="email"  type="email" autocomplete="email"
-                                  class=" py-3 px-4 block w-full shadow-sm text-warm-gray-900 focus:ring-celeste focus:border-celeste border-warm-gray-300 rounded-md ">
-                              </div>
-                            </div>
-                            <div>
-                              <div class=" flex justify-between ">
-                                <label for="phone" class=" block text-sm font-medium text-warm-gray-900 ">Phone</label>
-                                <span  class=" text-sm text-warm-gray-500 ">Opcional</span>
-                              </div>
-                              <div class=" mt-1 ">
-                                <input type="text"  id="phone" autocomplete=" tel "
-                                  class=" py-3 px-4 block w-full shadow-sm text-warm-gray-900 focus:ring-celeste focus:border-celeste border-warm-gray-300 rounded-md "
-                                  aria-describedby=" phone-optional ">
-                              </div>
-                            </div>
-                            <div class=" sm:col-span-1 ">
-                              <label for="edad" class=" block text-sm font-medium text-warm-gray-900 ">Edad</label>
-                              <div class=" mt-1 ">
-                                <input type="number" id="edad"
-                                  class=" py-3 px-4 block w-full shadow-sm text-warm-gray-900 focus:ring-celeste focus:border-celeste border-warm-gray-300 rounded-md ">
-                              </div>
-                            </div>
-                            <div class=" sm:col-span-1 ">
-                              <label for="temperatura" class=" block text-sm font-medium text-warm-gray-900 ">Temperatura registrada</label>
-                              <div class=" mt-1 ">
-                                <input type="number"  id="temperatura"
-                                  class=" py-3 px-4 block w-full shadow-sm text-warm-gray-900 focus:ring-celeste focus:border-celeste border-warm-gray-300 rounded-md ">
-                              </div>
-                            </div>
-                            <div class=" sm:col-span-1 lg:col-span-2 ">
-                              <div class=" flex justify-between ">
-                                <label for="placa" class=" block text-sm font-medium text-warm-gray-900 ">Placa de vehiculo</label>
-                                <span  class=" text-sm text-warm-gray-500 ">Opcional</span>
-                              </div>
-                              <div class=" mt-1 ">
-                                <input type="text" name="placa" id="placa" autocomplete=" tel "
-                                  class=" py-3 px-4 block w-full shadow-sm text-warm-gray-900 focus:ring-celeste focus:border-celeste border-warm-gray-300 rounded-md "
-                                  aria-describedby=" placa-opcional ">
-                              </div>
-                            </div>
-                           
-                            <div class=" formBox sm:col-span-2 sm:flex sm:justify-end ">
-                              <button class="mt-2 w-full inline-flex items-center justify-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-black bg-celeste hover:bg-teal-600 focus:outline-none focus:ring-2 focus:ring-offset-2
-                            focus:ring-celeste sm:w-auto" id="btn">Click to Add</button>
-                            
-                          </div>
-                          <div id="msg">
-                            <pre></pre>
-                          </div>
-                          </form>
-
-
-
-                          <div class=" max-w-7xl mx-auto bg-red-400 ">
-                              <div class=" flex flex-col ">
-
-                                <div class=" p-10 bg-black tex-white " id="showUser">
-                                  <!-- generate html in form.js  -->
-                                </div>
-
-                            
-
-                              </div>
-                          </div>
-
-                      <!-- <form class=" mt-6 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8 ">
-                        <div class="formBox">
-                          <label for="title" class=" block text-sm font-medium text-warm-gray-900 ">Movie</label>
-                          <input class=" py-3 px-4 block w-full shadow-sm text-warm-gray-900 focus:ring-celeste focus:border-celeste border-warm-gray-300 rounded-md"  type="text" id="title" placeholder="Title" />
-                        </div>
-                        <div class="formBox">
-                          <label for="yr">Year</label>
-                          <input class=" py-3 px-4 block w-full shadow-sm text-warm-gray-900 focus:ring-celeste focus:border-celeste border-warm-gray-300 rounded-md" type="number" id="yr" placeholder="Year" />
-                        </div>
-                        <div class="formBox">
-                          <button class="mt-2 w-full inline-flex items-center justify-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-black bg-celeste hover:bg-teal-600 focus:outline-none focus:ring-2 focus:ring-offset-2
-                          focus:ring-celeste sm:w-auto" id="btn">Click to Add</button>
-                        </div>
-                        <div id="msg">
-                          <pre></pre>
-                        </div>
-                      </form> -->
-
-                      <!-- <form class=" mt-6 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8 ">
-                        <div class="formBox">
-                          <label for="title" class=" block text-sm font-medium text-warm-gray-900 ">Nombre
+                      <form action="" class=" mt-6 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8 ">
+                        <div>
+                          <label for="nombre" class=" block text-sm font-medium text-warm-gray-900 ">Nombre
                           </label>
-                          <div class=" formBox mt-1 ">
-                            <input type="text" id="title"
+                          <div class=" mt-1 ">
+                            <input type="text" id="nombre" autocomplete="given-name"
+                              class=" py-3 px-4 block w-full shadow-sm text-warm-gray-900 focus:ring-celeste focus:border-celeste border-warm-gray-300 rounded-md "
+                              required>
+                          </div>
+                        </div>
+                        <div>
+                          <label for="apellido" class=" block text-sm font-medium text-warm-gray-900 ">Apellido</label>
+                          <div class=" mt-1 ">
+                            <input type="text" id="apellido" autocomplete="family-name"
                               class=" py-3 px-4 block w-full shadow-sm text-warm-gray-900 focus:ring-celeste focus:border-celeste border-warm-gray-300 rounded-md ">
                           </div>
                         </div>
-                        <div class="formBox">
-                          <label for="yr" class=" block text-sm font-medium text-warm-gray-900 ">Apellido</label>
-                          <div class="formBox mt-1 ">
-                            <input type="number" id="yr"
+                        <div>
+                          <label for="email" class=" block text-sm font-medium text-warm-gray-900 ">Email</label>
+                          <div class=" mt-1 ">
+                            <input id="email" type="email" autocomplete="email"
                               class=" py-3 px-4 block w-full shadow-sm text-warm-gray-900 focus:ring-celeste focus:border-celeste border-warm-gray-300 rounded-md ">
+                          </div>
+                        </div>
+                        <div>
+                          <div class=" flex justify-between ">
+                            <label for="phone" class="block text-sm font-medium text-warm-gray-900 ">Phone</label>
+                            <span class=" text-sm text-warm-gray-500 ">Opcional</span>
+                          </div>
+                          <div class=" mt-1 ">
+                            <input type="text" id="phone" autocomplete="tel"
+                              class=" py-3 px-4 block w-full shadow-sm text-warm-gray-900 focus:ring-celeste focus:border-celeste border-warm-gray-300 rounded-md "
+                              aria-describedby=" phone-optional ">
+                          </div>
+                        </div>
+                        <div class=" sm:col-span-1 ">
+                          <label for="edad" class=" block text-sm font-medium text-warm-gray-900 ">Edad</label>
+                          <div class=" mt-1 ">
+                            <input type="number" id="edad"
+                              class=" py-3 px-4 block w-full shadow-sm text-warm-gray-900 focus:ring-celeste focus:border-celeste border-warm-gray-300 rounded-md ">
+                          </div>
+                        </div>
+                        <div class=" sm:col-span-1 ">
+                          <label for="temperatura" class=" block text-sm font-medium text-warm-gray-900 ">Temperatura
+                            registrada</label>
+                          <div class=" mt-1 ">
+                            <input type="number" id="temperatura"
+                              class=" py-3 px-4 block w-full shadow-sm text-warm-gray-900 focus:ring-celeste focus:border-celeste border-warm-gray-300 rounded-md ">
+                          </div>
+                        </div>
+                        <div class=" sm:col-span-1 lg:col-span-2 ">
+                          <div class=" flex justify-between ">
+                            <label for="placa" class=" block text-sm font-medium text-warm-gray-900 ">Placa de
+                              vehiculo</label>
+                            <span class=" text-sm text-warm-gray-500 ">Opcional</span>
+                          </div>
+                          <div class=" mt-1 ">
+                            <input type="text" name="placa" id="placa" autocomplete="tel"
+                              class=" py-3 px-4 block w-full shadow-sm text-warm-gray-900 focus:ring-celeste focus:border-celeste border-warm-gray-300 rounded-md "
+                              aria-describedby=" placa-opcional " required >
                           </div>
                         </div>
 
-                        <div class=" formBox sm:col-span-2 sm:flex sm:justify-end ">
-                            <button class="mt-2 w-full inline-flex items-center justify-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-black bg-celeste hover:bg-teal-600 focus:outline-none focus:ring-2 focus:ring-offset-2
-                          focus:ring-celeste sm:w-auto" id="btn">Click to Add</button>
-                          
+                        <div class="formBox sm:col-span-2 sm:flex sm:justify-end ">
+                          <button type="submit" class="mt-2 w-full inline-flex items-center justify-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-black bg-celeste hover:bg-teal-600 focus:outline-none focus:ring-2 focus:ring-offset-2
+                            focus:ring-celeste sm:w-auto" id="btn">Agregar</button>
+
                         </div>
                         <div id="msg">
                           <pre></pre>
                         </div>
-                      </form> -->
+                      </form>
+
+      
+                      <ul class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-2" id="showUser">
+                   
+
+                      </ul>
 
                     </div>
+
+                
+                        
+
                   </div>
                 </div>
               </div>
-            </section>
-          </main>
-        </section>
-
-
     </div>
+    </section>
+    </main>
+    </section>
+
+
+  </div>
 
   </div>
   </main>
