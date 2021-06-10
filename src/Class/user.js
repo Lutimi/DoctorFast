@@ -5,16 +5,11 @@ class User {
         this.id = id;
         this.temperatura = temperatura;
         this.alive = true;  // usuario registrado activo
-        this.access_code = function() {
-            
-            console.log("Tu codigo de ingreso es: " + this.nombre.substr(-3, 2) + ("#@S") + this.edad
-                + this.temperatura);
+        // this.access_code = function () {
+        //     console.log("Tu codigo de ingreso es: " + this.nombre.substr(-3, 2) + ("#@S") + this.edad
+        //         + this.temperatura);
         }
-        
     }
-
-   
-
 }
 
 

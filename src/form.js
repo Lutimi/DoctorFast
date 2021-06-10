@@ -1,10 +1,6 @@
 
 
-
-
-
 let users = [];
-
 const addUser = (ev) => {
     ev.preventDefault(); // stop the for submitting
     let user = {
