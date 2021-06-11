@@ -1,54 +1,64 @@
-'use strict';
-
-// const modal = document.querySelector('.modal1');
-// const overlay = document.querySelector('.overlay');
-// const btnCloseModal = document.querySelector('.close-modal');
-// const btnsOpenModal = document.querySelectorAll('.show-modal');
-
-// const openModal = function () {
-//   modal.classList.remove('hidden');
-//   overlay.classList.remove('hidden');
-// };
-
-// const closeModal = function () {
-//   modal.classList.add('hidden');
-//   overlay.classList.add('hidden');
-// };
-
-// for (let i = 0; i < btnsOpenModal.length; i++)
-//   btnsOpenModal[i].addEventListener('click', openModal);
-
-// btnCloseModal.addEventListener('click', closeModal);
-// overlay.addEventListener('click', closeModal);
-
-
-
-//JQUERY VERSION
-
 var modal = $('#modallog');
 var overlay = $('.overlay');
-
+var register = $('#register');
 $('.show-modal').click(function() {
 
-  overlay.show();
-  modal.show();
+    overlay.show();
+    modal.show();
 
 });
 
 $('.close-modal').click(function() {
 
-  modal.hide();
-  overlay.hide();
-})
-
-document.addEventListener('keydown', function (e) {
-  console.log(e.key);
-
-  if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
     modal.hide();
     overlay.hide();
-  }
-});
+})
 
 
 
+// Custom effects
+var wm_defaults = {
+    viewOffset: {
+        top: 0,
+        right: 0,
+        bottom: 000,
+        left: 0
+    },
+    scale: 0.8,
+    reset: false,
+    duration: '1000'
+};
+var dist = '100px';
+
+ScrollReveal()
+    .reveal('.reveal', wm_defaults);
+ScrollReveal()
+    .reveal('.delay-100', { delay: 100 });
+ScrollReveal()
+    .reveal('.delay-200', { delay: 200 });
+ScrollReveal()
+    .reveal('.delay-300', { delay: 300 });
+ScrollReveal()
+    .reveal('.delay-400', { delay: 400 });
+ScrollReveal()
+    .reveal('.delay-800', { delay: 800 });
+ScrollReveal()
+    .reveal('.r-top', {
+        origin: 'top',
+        distance: dist
+    });
+ScrollReveal()
+    .reveal('.r-bottom', {
+        origin: 'bottom',
+        distance: dist
+    });
+ScrollReveal()
+    .reveal('.r-left', {
+        origin: 'left',
+        distance: dist
+    });
+ScrollReveal()
+    .reveal('.r-right', {
+        origin: 'right',
+        distance: dist
+    });

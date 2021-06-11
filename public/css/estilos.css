@@ -1,11 +1,10 @@
+.show-modal {}
 
- 
-  
-  .show-modal {
+html {
+    scroll-behavior: smooth;
+}
 
-  }
-  
-  .close-modal {
+.close-modal {
     position: absolute;
     top: 0.2rem;
     right: 2rem;
@@ -14,25 +13,43 @@
     cursor: pointer;
     border: none;
     background: none;
-  }
-    
-  /* -------------------------- */
-  /* CLASSES TO MAKE MODAL WORK */
+}
 
-  .modal1 {
-    position: absolute;
-    top: 50%;
+
+/* -------------------------- */
+
+
+/* CLASSES TO MAKE MODAL WORK */
+
+.modal1 {
+    position: fixed;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 70%;
     background-color: white;
-    padding: 2rem 0rem 2rem 0rem ;
+    padding: 2rem 0rem 2rem 0rem;
     border-radius: 5px;
     box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
     z-index: 20;
-  }
-  
-  .overlay {
+}
+
+@media only screen and (min-width: 768px) {
+    .modal1 {
+        position: fixed;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 30%;
+        background-color: white;
+        padding: 2rem 0rem 2rem 0rem;
+        border-radius: 5px;
+        box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+        z-index: 20;
+    }
+}
+
+.overlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -40,9 +57,5 @@
     height: 100%;
     background-color: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(3px);
-    z-index:11;
-  }
-  
-
-
-  
+    z-index: 11;
+}
