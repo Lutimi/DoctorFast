@@ -16,6 +16,9 @@ $('.close-modal').click(function() {
 
 
 
+
+
+
 // Custom effects
 var wm_defaults = {
     viewOffset: {
