@@ -55,7 +55,7 @@ const addUser = (ev) => {
                 <p class="mt-1 text-gray-500 text-sm truncate">Placa vehicular: ${grabRegistrations['placa']}</p>
               </div>
               <img class="w-12 h-15 bg-gray-300 rounded-full flex-shrink-0"
-                src="lpublic/img/guy.svg"
+                src="../public/img/guy.svg"
                 alt="">
             </div>
             <div>
