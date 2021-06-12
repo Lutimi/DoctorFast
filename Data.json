@@ -17,5 +17,45 @@
         "edad": 18,
         "temperatura": "34",
         "placa": "AZXINE8"
+    },
+    {
+        "id": 3,
+        "nombre2": "md ",
+        "apellido2": "sdaf",
+        "email2": "coder1@hotmail.com",
+        "phone": "972730589",
+        "edad": 18,
+        "temperatura": "34",
+        "placa": "asldkfja"
+    },
+    {
+        "id": 4,
+        "nombre2": "Juanito ",
+        "apellido2": "sdaf",
+        "email2": "coder1@hotmail.com",
+        "phone": "972730589",
+        "edad": 18,
+        "temperatura": "34",
+        "placa": "asldkfja"
+    },
+    {
+        "id": 5,
+        "nombre2": "Luis ",
+        "apellido2": "Ticona",
+        "email2": "coder1@hotmail.com",
+        "phone": "972730589",
+        "edad": 18,
+        "temperatura": "34",
+        "placa": "asldkfja"
+    },
+    {
+        "id": 6,
+        "nombre2": "Misael ",
+        "apellido2": "Putimi",
+        "email2": "coder1@hotmail.com",
+        "phone": "972730589",
+        "edad": 18,
+        "temperatura": "34",
+        "placa": "asldkfja"
     }
 ]

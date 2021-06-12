@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" />
     <!-- custom modals -->
     <link rel="stylesheet" href="../public/css/modals_carroussels/modals.css">
+
+    <link rel="stylesheet" href="../public/css/estilos.css">
     <!-- tailwind css -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../public/tailwind.css">
@@ -298,7 +300,7 @@
 
                                             <form action=" " class=" mt-6 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8 ">
                                                 <div>
-                                                    <label for="nombre2" class=" block text-sm font-medium text-warm-gray-900 ">Nombre
+                                                    <label required for="nombre2" class=" block text-sm font-medium text-warm-gray-900 ">Nombre
                                 </label>
                                                     <div class=" mt-1 ">
                                                         <input require type="text" id="nombre2" autocomplete=" given-name " class=" py-3 px-4 block w-full shadow-sm text-warm-gray-900 focus:ring-celeste focus:border-celeste border-warm-gray-300 rounded-md ">
@@ -335,7 +337,7 @@
                                                     <label for="temperatura" class=" block text-sm font-medium text-warm-gray-900 ">Temperatura
                                   registrada</label>
                                                     <div class=" mt-1 ">
-                                                        <input type="number" id="temperatura" class=" py-3 px-4 block w-full shadow-sm text-warm-gray-900 focus:ring-celeste focus:border-celeste border-warm-gray-300 rounded-md ">
+                                                        <input required type="number" id="temperatura" class=" py-3 px-4 block w-full shadow-sm text-warm-gray-900 focus:ring-celeste focus:border-celeste border-warm-gray-300 rounded-md ">
                                                     </div>
                                                 </div>
                                                 <div class=" sm:col-span-1 lg:col-span-2 ">
@@ -478,18 +480,19 @@
 
 
 
-    <!-- <script src=" src/functions.js "></script> -->
-    <script src=" ../src/main.js "></script>
+
+    <script src=" ../src/Custom/global.js"></script>
     <script src=" ../src/Class/user.js "></script>
     <script src="../src/functions.js ">
     </script>
+
     <script src=" https://unpkg.com/scrollreveal "></script>
 
 
     <script src=" https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js " integrity=" sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN " crossorigin=" anonymous "></script>
     <script src=" https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js " integrity=" sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV " crossorigin=" anonymous "></script>
     <script src=" https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.js "></script>
-
+    <script src="../src/main.js "></script>
     <script src=" ../src/Custom/modals.js "></script>
     <script src="../src/form.js "></script>
 
