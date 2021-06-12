@@ -55,7 +55,7 @@ const addUser = (ev) => {
                 <p class="mt-1 text-gray-500 text-sm truncate">Placa vehicular: ${grabRegistrations['placa']}</p>
               </div>
               <img class="w-12 h-15 bg-gray-300 rounded-full flex-shrink-0"
-                src="/public/img/guy.svg"
+                src="lpublic/img/guy.svg"
                 alt="">
             </div>
             <div>
@@ -84,7 +84,7 @@ html += `<li class="col-span-1 bg-white rounded-lg shadow divide-y divide-gray-2
                 <p class="mt-1 text-gray-500 text-sm truncate">Placa vehicular: ${individualObjs[7]}</p>
               </div>
               <img class="w-12 h-15 bg-gray-300 rounded-full flex-shrink-0"
-                src="/public/img/guy.svg"
+              src="../public/img/guy.svg"
                 alt="">
             </div>
             <div>
