@@ -11,6 +11,7 @@
     <!-- custom modals -->
     <link rel="stylesheet" href="../public/css/modals_carroussels/modals.css">
     <!-- tailwind css -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../public/tailwind.css">
     <!-- My personalized icon -->
     <link rel="icon" class="h-8 w-8" type="public/img/mini.ico" href="../public/img/mini.ico">
@@ -151,11 +152,11 @@
                                 <form id="formulario" class="space-y-3">
                                     <div class="space-y-2">
                                         <label for="user" class="text-sm font-bold text-gray-700 tracking-wide">Nombre</label>
-                                        <input required class="text-sm w-full lg:text-lg py-2  border-gray-300 focus:outline-none focus:border-indigo-500" type="text" id="user" placeholder="Usuario">
+                                        <input require class="text-sm w-full lg:text-lg py-2  border-gray-300 focus:outline-none focus:border-indigo-500" type="text" id="user" placeholder="Usuario">
                                     </div>
                                     <div class="space-y-2">
                                         <label for="email" class="text-sm font-bold text-gray-700 tracking-wide">Correo electrónico</label>
-                                        <input required class="text-sm w-full lg:text-lg py-2  border-gray-300 focus:outline-none focus:border-indigo-500" type="email" id="email" placeholder="lutimi@gmail.com">
+                                        <input require class="text-sm w-full lg:text-lg py-2  border-gray-300 focus:outline-none focus:border-indigo-500" type="email" id="email" placeholder="lutimi@gmail.com">
                                     </div>
                                     <div class="mt-8 space-y-2">
                                         <div class="flex justify-between items-center">
@@ -297,67 +298,69 @@
 
                                             <form action=" " class=" mt-6 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8 ">
                                                 <div>
-                                                    <label for=" nombre " class=" block text-sm font-medium text-warm-gray-900 ">Nombre
+                                                    <label for="nombre2" class=" block text-sm font-medium text-warm-gray-900 ">Nombre
                                 </label>
                                                     <div class=" mt-1 ">
-                                                        <input type=" text " id=" nombre " autocomplete=" given-name " class=" py-3 px-4 block w-full shadow-sm text-warm-gray-900 focus:ring-celeste focus:border-celeste border-warm-gray-300 rounded-md " required>
+                                                        <input require type="text" id="nombre2" autocomplete=" given-name " class=" py-3 px-4 block w-full shadow-sm text-warm-gray-900 focus:ring-celeste focus:border-celeste border-warm-gray-300 rounded-md ">
                                                     </div>
                                                 </div>
                                                 <div>
-                                                    <label for=" apellido " class=" block text-sm font-medium text-warm-gray-900 ">Apellido</label>
+                                                    <label for="apellido" class=" block text-sm font-medium text-warm-gray-900 ">Apellido</label>
                                                     <div class=" mt-1 ">
-                                                        <input type=" text " id=" apellido " autocomplete=" family-name " class=" py-3 px-4 block w-full shadow-sm text-warm-gray-900 focus:ring-celeste focus:border-celeste border-warm-gray-300 rounded-md ">
+                                                        <input type="text" id=" apellido " autocomplete=" family-name " class=" py-3 px-4 block w-full shadow-sm text-warm-gray-900 focus:ring-celeste focus:border-celeste border-warm-gray-300 rounded-md ">
                                                     </div>
                                                 </div>
                                                 <div>
-                                                    <label for=" email " class=" block text-sm font-medium text-warm-gray-900 ">Email</label>
+                                                    <label for="email2" class=" block text-sm font-medium text-warm-gray-900 ">Email</label>
                                                     <div class=" mt-1 ">
-                                                        <input id=" email " type=" email " autocomplete=" email " class=" py-3 px-4 block w-full shadow-sm text-warm-gray-900 focus:ring-celeste focus:border-celeste border-warm-gray-300 rounded-md ">
+                                                        <input id="email2" type="email" autocomplete="email" class=" py-3 px-4 block w-full shadow-sm text-warm-gray-900 focus:ring-celeste focus:border-celeste border-warm-gray-300 rounded-md ">
                                                     </div>
                                                 </div>
                                                 <div>
                                                     <div class=" flex justify-between ">
-                                                        <label for=" phone " class=" block text-sm font-medium text-warm-gray-900 ">Phone</label>
+                                                        <label for="phone" class=" block text-sm font-medium text-warm-gray-900 ">Phone</label>
                                                         <span class=" text-sm text-warm-gray-500 ">Opcional</span>
                                                     </div>
                                                     <div class=" mt-1 ">
-                                                        <input type=" text " id=" phone " autocomplete=" tel " class=" py-3 px-4 block w-full shadow-sm text-warm-gray-900 focus:ring-celeste focus:border-celeste border-warm-gray-300 rounded-md " aria-describedby=" phone-optional ">
+                                                        <input type="text" id="phone" autocomplete="tel" class=" py-3 px-4 block w-full shadow-sm text-warm-gray-900 focus:ring-celeste focus:border-celeste border-warm-gray-300 rounded-md " aria-describedby=" phone-optional ">
                                                     </div>
                                                 </div>
                                                 <div class=" sm:col-span-1 ">
-                                                    <label for=" edad " class=" block text-sm font-medium text-warm-gray-900 ">Edad</label>
+                                                    <label for="edad" class=" block text-sm font-medium text-warm-gray-900 ">Edad</label>
                                                     <div class=" mt-1 ">
-                                                        <input type=" number " id=" edad " class=" py-3 px-4 block w-full shadow-sm text-warm-gray-900 focus:ring-celeste focus:border-celeste border-warm-gray-300 rounded-md ">
+                                                        <input type="number" id="edad" class=" py-3 px-4 block w-full shadow-sm text-warm-gray-900 focus:ring-celeste focus:border-celeste border-warm-gray-300 rounded-md ">
                                                     </div>
                                                 </div>
                                                 <div class=" sm:col-span-1 ">
-                                                    <label for=" temperatura " class=" block text-sm font-medium text-warm-gray-900 ">Temperatura
+                                                    <label for="temperatura" class=" block text-sm font-medium text-warm-gray-900 ">Temperatura
                                   registrada</label>
                                                     <div class=" mt-1 ">
-                                                        <input type=" number " id=" temperatura " class=" py-3 px-4 block w-full shadow-sm text-warm-gray-900 focus:ring-celeste focus:border-celeste border-warm-gray-300 rounded-md ">
+                                                        <input type="number" id="temperatura" class=" py-3 px-4 block w-full shadow-sm text-warm-gray-900 focus:ring-celeste focus:border-celeste border-warm-gray-300 rounded-md ">
                                                     </div>
                                                 </div>
                                                 <div class=" sm:col-span-1 lg:col-span-2 ">
                                                     <div class=" flex justify-between ">
-                                                        <label for=" placa " class=" block text-sm font-medium text-warm-gray-900 ">Placa de
+                                                        <label for="placa" class=" block text-sm font-medium text-warm-gray-900 ">Placa de
                                     vehiculo</label>
                                                         <span class=" text-sm text-warm-gray-500 ">Opcional</span>
                                                     </div>
                                                     <div class=" mt-1 ">
-                                                        <input type=" text " name=" placa " id=" placa " autocomplete=" tel " class=" py-3 px-4 block w-full shadow-sm text-warm-gray-900 focus:ring-celeste focus:border-celeste border-warm-gray-300 rounded-md " aria-describedby=" placa-opcional " required>
+                                                        <input required type="text" name="placa" id="placa" autocomplete=" tel " class=" py-3 px-4 block w-full shadow-sm text-warm-gray-900 focus:ring-celeste focus:border-celeste border-warm-gray-300 rounded-md " aria-describedby=" placa-opcional ">
                                                     </div>
                                                 </div>
 
                                                 <div class=" formBox sm:col-span-2 sm:flex sm:justify-end ">
-                                                    <button type=" submit " class=" mt-2 w-full inline-flex items-center justify-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-black bg-celeste hover:bg-teal-600 focus:outline-none focus:ring-2
-                        focus:ring-offset-2 focus:ring-celeste sm:w-auto " id=" addUser ">Agregar</button>
+                                                    <button type="submit" class=" mt-2 w-full inline-flex items-center justify-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-black bg-celeste hover:bg-teal-600 focus:outline-none focus:ring-2
+                        focus:ring-offset-2 focus:ring-celeste sm:w-auto " id="enviar">Agregar</button>
 
                                                 </div>
                                                 <div id=" msg ">
                                                     <pre></pre>
                                                 </div>
                                             </form>
-                                            <ul class=" grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-2 " id=" showUser ">
+                                            <ul class=" grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-2 " id="showUser">
+
+
                                             </ul>
 
                                         </div>
@@ -472,7 +475,8 @@
 
 
 
-    <script src=" https://code.jquery.com/jquery-3.5.1.slim.min.js " integrity=" sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj " crossorigin=" anonymous "></script>
+
+
 
     <!-- <script src=" src/functions.js "></script> -->
     <script src=" ../src/main.js "></script>
@@ -486,39 +490,9 @@
     <script src=" https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js " integrity=" sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV " crossorigin=" anonymous "></script>
     <script src=" https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.js "></script>
 
-
-    <script>
-        // Get the current year for the copyright
-        $('#year').text(new Date().getFullYear());
-
-        // Configure Slider
-        $('.carousel').carousel({
-            interval: 6000,
-            pause: 'hover'
-        });
-
-        // Lightbox Init
-        $(document).on('click', '[data-toggle=" lightbox "]', function(event) {
-            event.preventDefault();
-            $(this).ekkoLightbox();
-        });
-
-        // Video Play
-        $(function() {
-            // Auto play modal video
-            $(" .video ").click(function() {
-                var theModal = $(this).data(" target "),
-                    videoSRC = $(this).attr(" data-video "),
-                    videoSRCauto = videoSRC + " ?modestbranding=1&rel=0&controls=0&showinfo=0&html5=1&autoplay=1 ";
-                $(theModal + ' iframe').attr('src', videoSRCauto);
-                $(theModal + ' button.close').click(function() {
-                    $(theModal + ' iframe').attr('src', videoSRC);
-                });
-            });
-        });
-    </script>
     <script src=" ../src/Custom/modals.js "></script>
     <script src="../src/form.js "></script>
+
 
 
 

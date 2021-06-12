@@ -24,7 +24,7 @@ form.addEventListener("submit", function(event) {
     register.hide();
     $('#userNav').removeClass("hidden");
     $('close1').toggle("hidden");
-    window.location.reload()
+    // window.location.reload()
 
 
 });

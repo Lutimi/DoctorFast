@@ -1,0 +1,21 @@
+[{
+        "id": 1,
+        "nombre2": "Juan ",
+        "apellido2": "perez",
+        "email2": "coder1@hotmail.com",
+        "phone": "972730589",
+        "edad": 18,
+        "temperatura": "34",
+        "placa": "AZXINE3"
+    },
+    {
+        "id": 2,
+        "nombre2": "Pedro ",
+        "apellido2": "IDK",
+        "email2": "coder1@hotmail.com",
+        "phone": "972730589",
+        "edad": 18,
+        "temperatura": "34",
+        "placa": "AZXINE8"
+    }
+]
