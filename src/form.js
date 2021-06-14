@@ -51,7 +51,7 @@ const addUser = (ev) => {
                 </div>
                 <p class="mt-1 text-gray-500 text-sm truncate">email: ${grabRegistrations['email2']}</p>
                 <p class="mt-1 text-gray-500 text-sm truncate">CEL: ${grabRegistrations['phone']}</p>
-                <p class="mt-1 text-gray-500 text-sm truncate">Edad: ${grabRegistrations['age']}</p>
+                <p class="mt-1 text-gray-500 text-sm truncate">Edad: ${grabRegistrations['edad']}</p>
                 <p class="mt-1 text-gray-500 text-sm truncate">Placa vehicular: ${grabRegistrations['placa']}</p>
               </div>
               <img class="w-12 h-15 bg-gray-300 rounded-full flex-shrink-0"
