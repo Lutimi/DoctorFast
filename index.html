@@ -7,7 +7,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Alpine js for the navbar -->
   <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.min.js" defer></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" />
+
+  <!-- Infinite scroller -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" />
+
+ 
+
+
   <!-- custom modals -->
   <link rel="stylesheet" href="public/css/modals_carroussels/modals.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" />
@@ -17,6 +23,7 @@
   <link rel="stylesheet" href="public/css/estilos.css">
   <!-- My custom icon -->
   <link rel="icon" class="h-8 w-8" type="public/img/mini.ico" href="public/img/mini.ico">
+
   <!-- title -->
   <title>Watch-E</title>
 
@@ -24,274 +31,271 @@
 </head>
 
 <body>
-
-
-   <!-- This example requires Tailwind CSS v2.0+ -->
-   <div class="relative bg-white overflow-hidden" x-data="{ menuOpen: false }">
+  <div class="relative bg-white overflow-hidden" x-data="{ menuOpen: false }">
     <div class="hidden sm:block sm:absolute sm:inset-y-0 sm:h-full sm:w-full" aria-hidden="true">
-        <div class="relative h-full max-w-7xl mx-auto">
-            <svg class="absolute right-full transform translate-y-1/4 translate-x-1/4 lg:translate-x-1/2"
-                width="404" height="784" fill="none" viewBox="0 0 404 784">
-                <defs>
-                    <pattern id="f210dbf6-a58d-4871-961e-36d5016a0f49" x="0" y="0" width="20" height="20"
-                        patternUnits="userSpaceOnUse">
-                        <rect x="0" y="0" width="4" height="4" class="text-gray-200" fill="currentColor" />
-                    </pattern>
-                </defs>
-                <rect width="404" height="784" fill="url(#f210dbf6-a58d-4871-961e-36d5016a0f49)" />
-            </svg>
-            <svg class="absolute left-full transform -translate-y-3/4 -translate-x-1/4 md:-translate-y-1/2 lg:-translate-x-1/2"
-                width="404" height="784" fill="none" viewBox="0 0 404 784">
-                <defs>
-                    <pattern id="5d0dd344-b041-4d26-bec4-8d33ea57ec9b" x="0" y="0" width="20" height="20"
-                        patternUnits="userSpaceOnUse">
-                        <rect x="0" y="0" width="4" height="4" class="text-gray-200" fill="currentColor" />
-                    </pattern>
-                </defs>
-                <rect width="404" height="784" fill="url(#5d0dd344-b041-4d26-bec4-8d33ea57ec9b)" />
-            </svg>
-        </div>
+      <div class="relative h-full max-w-7xl mx-auto">
+        <svg class="absolute right-full transform translate-y-1/4 translate-x-1/4 lg:translate-x-1/2" width="404"
+          height="784" fill="none" viewBox="0 0 404 784">
+          <defs>
+            <pattern id="f210dbf6-a58d-4871-961e-36d5016a0f49" x="0" y="0" width="20" height="20"
+              patternUnits="userSpaceOnUse">
+              <rect x="0" y="0" width="4" height="4" class="text-gray-200" fill="currentColor" />
+            </pattern>
+          </defs>
+          <rect width="404" height="784" fill="url(#f210dbf6-a58d-4871-961e-36d5016a0f49)" />
+        </svg>
+        <svg
+          class="absolute left-full transform -translate-y-3/4 -translate-x-1/4 md:-translate-y-1/2 lg:-translate-x-1/2"
+          width="404" height="784" fill="none" viewBox="0 0 404 784">
+          <defs>
+            <pattern id="5d0dd344-b041-4d26-bec4-8d33ea57ec9b" x="0" y="0" width="20" height="20"
+              patternUnits="userSpaceOnUse">
+              <rect x="0" y="0" width="4" height="4" class="text-gray-200" fill="currentColor" />
+            </pattern>
+          </defs>
+          <rect width="404" height="784" fill="url(#5d0dd344-b041-4d26-bec4-8d33ea57ec9b)" />
+        </svg>
+      </div>
     </div>
 
     <div class="relative pt-6 pb-16 sm:pb-24">
-        <div>
-            <div class="max-w-7xl mx-auto px-4 sm:px-6">
-                <nav class="relative flex items-center justify-between sm:h-10 md:justify-center"
-                    aria-label="Global">
-                    <div class="flex items-center flex-1 md:absolute md:inset-y-0 md:left-0">
-                        <div class="flex items-center justify-between w-full md:w-auto">
-                            <a href="#">
-                                <span class="sr-only">Workflow</span>
-                                <img class=" lg:mt-2 h-8 w-auto sm:h-8" src="public/img/logo (1).png" alt="">
-                            </a>
-                            <div class="-mr-2 flex items-center md:hidden">
-                                <button @click="menuOpen = true" type="button"
-                                    class="bg-gray-50 rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
-                                    aria-expanded="false">
-                                    <span class="sr-only">Open main menu</span>
-                                    <!-- Heroicon name: outline/menu -->
-                                    <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                        viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M4 6h16M4 12h16M4 18h16" />
-                                    </svg>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="hidden md:flex md:space-x-10 mr-44">
-                        <a href="index.html" class="font-medium text-gray-500 hover:text-celeste">INICIO</a>
-          
-                        <a href="#seguridad" class="font-medium text-gray-500 hover:text-celeste">ACERCA</a>
-                        <a href="#plans" class="font-medium text-gray-500 hover:text-celeste">PLANES</a>
-          
-                     
-          
-                        <a href="#" class="font-medium text-gray-500 hover:text-celeste">CLIENTES</a>
-          
-                      </div>
-                    <div id="loginInfo"
-          class="  hidden absolute md:flex  md:space-x-4 md:items-center md:justify-end md:inset-y-0 md:right-0">
-
-
-
-          <div id="userNav" class=" text-base  font-medium items-center "></div>
-          <a href="sections/register.html"
-            class="  px-2 py-2 text-base font-medium rounded-md text-celeste bg-white hover:bg-gray-50">
-            Registrar Usuarios
-          </a>
-          <button href="#" id="close2" class="text-sm p-2  rounded-md bg-red-800 text-white font-medium"> Log out
-          </button>
-    
-        </div>
-                </nav>
-            </div>
-
-            
-  
-            <div x-show="menuOpen"
-                class="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden">
-                <div class="rounded-lg shadow-md bg-white ring-1 ring-black ring-opacity-5 overflow-hidden">
-                    <div class="px-5 pt-4 flex items-center justify-between">
-                        <div>
-                            <img class="h-8 w-auto" src="public/img/logo (1).png" alt="">
-                        </div>
-                        <div class="-mr-2">
-                            <button @click="menuOpen = false" type="button"
-                                class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
-                                <span class="sr-only">Close menu</span>
-                                <!-- Heroicon name: outline/x -->
-                                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                    viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M6 18L18 6M6 6l12 12" />
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="px-2 pt-2 pb-3">
-                        <a href="#"
-                          class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-celeste hover:bg-celeste">INICIO</a>
-                        <a href="#"
-                          class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-celeste hover:bg-celeste">ACERCA</a>
-          
-                        <a href="#"
-                          class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-black hover:bg-celeste">PLANES</a>
-          
-                        <a href="#"
-                          class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-black hover:bg-celeste">VENTAJAS</a>
-          
-          
-                      </div>
-                      <a href="sections/register.html"
-                        class="block w-full px-5 py-3 text-center font-medium text-celeste bg-gray-50 hover:bg-gray-100">
-                        Registrar Usuarios
-                      </a>
+      <div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+          <nav class="relative flex items-center justify-between sm:h-10 md:justify-center" aria-label="Global">
+            <div class="flex items-center flex-1 md:absolute md:inset-y-0 md:left-0">
+              <div class="flex items-center justify-between w-full md:w-auto">
+                <a href="#">
+                  <span class="sr-only">Workflow</span>
+                  <img class=" lg:mt-2 h-8 w-auto sm:h-8" src="public/img/logo (1).png" alt="">
+                </a>
+                <div class="-mr-2 flex items-center md:hidden">
+                  <button @click="menuOpen = true" type="button"
+                    class="bg-gray-50 rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+                    aria-expanded="false">
+                    <span class="sr-only">Open main menu</span>
+                    <!-- Heroicon name: outline/menu -->
+                    <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                      stroke="currentColor" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                  </button>
                 </div>
+              </div>
             </div>
+            <div class="hidden md:flex md:space-x-10 mr-44">
+              <a href="index.html" class="font-medium text-gray-500 hover:text-celeste">INICIO</a>
+
+              <a href="#seguridad" class="font-medium text-gray-500 hover:text-celeste">ACERCA</a>
+              <a href="#plans" class="font-medium text-gray-500 hover:text-celeste">PLANES</a>
+
+
+
+              <a href="#" class="font-medium text-gray-500 hover:text-celeste">CLIENTES</a>
+
+            </div>
+            <div id="loginInfo"
+              class="  hidden absolute md:flex  md:space-x-4 md:items-center md:justify-end md:inset-y-0 md:right-0">
+
+
+
+              <div id="userNav" class=" text-base  font-medium items-center "></div>
+              <a href="sections/register.html"
+                class="  px-2 py-2 text-base font-medium rounded-md text-celeste bg-white hover:bg-gray-50">
+                Registrar Usuarios
+              </a>
+              <button href="#" id="close2" class="text-sm p-2  rounded-md bg-red-800 text-white font-medium"> Log out
+              </button>
+
+            </div>
+          </nav>
         </div>
 
-        
-             <!-- Login Modal Section Is not visible -->
-  <section>
-    <div class=" ">
-      <!-- modal for login -->
-      <div class="  hidden  modal1" id="modallog">
-        <button
-          class="mt-8 bg-white rounded-md  inline-flex  justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 close-modal">
-          <svg class="h-4 w-4 md:h-12 md:w-12" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-            stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-          </svg></button>
-        <div class=" px-4 lg:px-12   lg:mt-4 xl:px-24 ">
-          <h2 class="text-center text-sm lg:text-2xl text-indigo-900 
+
+
+        <div x-show="menuOpen" class="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden">
+          <div class="rounded-lg shadow-md bg-white ring-1 ring-black ring-opacity-5 overflow-hidden">
+            <div class="px-5 pt-4 flex items-center justify-between">
+              <div>
+                <img class="h-8 w-auto" src="public/img/logo (1).png" alt="">
+              </div>
+              <div class="-mr-2">
+                <button @click="menuOpen = false" type="button"
+                  class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                  <span class="sr-only">Close menu</span>
+                  <!-- Heroicon name: outline/x -->
+                  <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="px-2 pt-2 pb-3">
+              <a href="#"
+                class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-celeste hover:bg-celeste">INICIO</a>
+              <a href="#"
+                class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-celeste hover:bg-celeste">ACERCA</a>
+
+              <a href="#"
+                class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-black hover:bg-celeste">PLANES</a>
+
+              <a href="#"
+                class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-black hover:bg-celeste">VENTAJAS</a>
+
+
+            </div>
+            <a href="sections/register.html"
+              class="block w-full px-5 py-3 text-center font-medium text-celeste bg-gray-50 hover:bg-gray-100">
+              Registrar Usuarios
+            </a>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Login Modal Section Is not visible -->
+      <section>
+        <div class=" ">
+          <!-- modal for login -->
+          <div class="  hidden  modal1" id="modallog">
+            <button
+              class="mt-8 bg-white rounded-md  inline-flex  justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 close-modal">
+              <svg class="h-4 w-4 md:h-12 md:w-12" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              </svg></button>
+            <div class=" px-4 lg:px-12   lg:mt-4 xl:px-24 ">
+              <h2 class="text-center text-sm lg:text-2xl text-indigo-900 
             font-display font-semibold lg:text-left xl:text-5xl
                         xl:text-bold">Registrate</h2>
 
-          <div class="mt-12">
-            <form id="formulario" class="space-y-3">
-              <div class="space-y-2">
-                <label for="user" class="text-sm font-bold text-gray-700 tracking-wide">Nombre</label>
-                <input required
-                  class="text-sm w-full lg:text-lg py-2  border-gray-300 focus:outline-none focus:border-indigo-500"
-                  type="text" id="user" placeholder="Usuario">
-              </div>
-              <div class="space-y-2">
-                <label for="email" class="text-sm font-bold text-gray-700 tracking-wide">Correo electrónico</label>
-                <input required
-                  class="text-sm w-full lg:text-lg py-2  border-gray-300 focus:outline-none focus:border-indigo-500"
-                  type="email" id="email" placeholder="lutimi@gmail.com">
-              </div>
-              <div class="mt-8 space-y-2">
-                <div class="flex justify-between items-center">
-                  <label for="password" class="text-sm font-bold text-gray-700 tracking-wide">
-                    Contraseña
-                  </label>
-                </div>
-                <input
-                  class="w-full border-b lg:text-lg py-2 text-sm   border-gray-300 focus:outline-none focus:border-indigo-500"
-                  type="password" id="password" placeholder="Ingresa tu contraseña">
-              </div>
-              <div class="mt-10">
-                <button type="submit" class="bg-indigo-500 text-gray-100  w-full rounded-full tracking-wide
+              <div class="mt-12">
+                <form id="formulario" class="space-y-3">
+                  <div class="space-y-2">
+                    <label for="user" class="text-sm font-bold text-gray-700 tracking-wide">Nombre</label>
+                    <input required
+                      class="text-sm w-full lg:text-lg py-2  border-gray-300 focus:outline-none focus:border-indigo-500"
+                      type="text" id="user" placeholder="Usuario">
+                  </div>
+                  <div class="space-y-2">
+                    <label for="email" class="text-sm font-bold text-gray-700 tracking-wide">Correo electrónico</label>
+                    <input required
+                      class="text-sm w-full lg:text-lg py-2  border-gray-300 focus:outline-none focus:border-indigo-500"
+                      type="email" id="email" placeholder="lutimi@gmail.com">
+                  </div>
+                  <div class="mt-8 space-y-2">
+                    <div class="flex justify-between items-center">
+                      <label for="password" class="text-sm font-bold text-gray-700 tracking-wide">
+                        Contraseña
+                      </label>
+                    </div>
+                    <input
+                      class="w-full border-b lg:text-lg py-2 text-sm   border-gray-300 focus:outline-none focus:border-indigo-500"
+                      type="password" id="password" placeholder="Ingresa tu contraseña">
+                  </div>
+                  <div class="mt-10">
+                    <button type="submit" class="bg-indigo-500 text-gray-100  w-full rounded-full tracking-wide
                                     lg:py-2 font-semibold text-sm lg:text-2xl font-display focus:outline-none 
                                     focus:shadow-outline hover:bg-indigo-600
                                     shadow-lg">
-                  Log In
-                </button>
+                      Log In
+                    </button>
+                  </div>
+                </form>
               </div>
-            </form>
+            </div>
+
           </div>
-        </div>
 
-      </div>
-
-   <!-- Login Modal Section Is not visible -->
-   <section>
-    <div class=" ">
-      <!-- modal for login -->
-      <div class="  hidden  modal1" id="modallog">
-        <button
-          class="mt-8 bg-white rounded-md  inline-flex  justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 close-modal">
-          <svg class="h-4 w-4 md:h-12 md:w-12" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-            stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-          </svg></button>
-        <div class=" px-4 lg:px-12   lg:mt-4 xl:px-24 ">
-          <h2 class="text-center text-sm lg:text-2xl text-indigo-900 
+          <!-- Login Modal Section Is not visible -->
+          <section>
+            <div class=" ">
+              <!-- modal for login -->
+              <div class="  hidden  modal1" id="modallog">
+                <button
+                  class="mt-8 bg-white rounded-md  inline-flex  justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 close-modal">
+                  <svg class="h-4 w-4 md:h-12 md:w-12" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                  </svg></button>
+                <div class=" px-4 lg:px-12   lg:mt-4 xl:px-24 ">
+                  <h2 class="text-center text-sm lg:text-2xl text-indigo-900 
             font-display font-semibold lg:text-left xl:text-5xl
                         xl:text-bold">Registrate</h2>
 
-          <div class="mt-12">
-            <form id="formulario" class="space-y-3">
-              <div class="space-y-2">
-                <label for="user" class="text-sm font-bold text-gray-700 tracking-wide">Nombre</label>
-                <input required
-                  class="text-sm w-full lg:text-lg py-2  border-gray-300 focus:outline-none focus:border-indigo-500"
-                  type="text" id="user" placeholder="Usuario">
-              </div>
-              <div class="space-y-2">
-                <label for="email" class="text-sm font-bold text-gray-700 tracking-wide">Correo electrónico</label>
-                <input required
-                  class="text-sm w-full lg:text-lg py-2  border-gray-300 focus:outline-none focus:border-indigo-500"
-                  type="email" id="email" placeholder="lutimi@gmail.com">
-              </div>
-              <div class="mt-8 space-y-2">
-                <div class="flex justify-between items-center">
-                  <label for="password" class="text-sm font-bold text-gray-700 tracking-wide">
-                    Contraseña
-                  </label>
-                </div>
-                <input
-                  class="w-full border-b lg:text-lg py-2 text-sm   border-gray-300 focus:outline-none focus:border-indigo-500"
-                  type="password" id="password" placeholder="Ingresa tu contraseña">
-              </div>
-              <div class="mt-10">
-                <button type="submit" class="bg-indigo-500 text-gray-100  w-full rounded-full tracking-wide
+                  <div class="mt-12">
+                    <form id="formulario" class="space-y-3">
+                      <div class="space-y-2">
+                        <label for="user" class="text-sm font-bold text-gray-700 tracking-wide">Nombre</label>
+                        <input required
+                          class="text-sm w-full lg:text-lg py-2  border-gray-300 focus:outline-none focus:border-indigo-500"
+                          type="text" id="user" placeholder="Usuario">
+                      </div>
+                      <div class="space-y-2">
+                        <label for="email" class="text-sm font-bold text-gray-700 tracking-wide">Correo
+                          electrónico</label>
+                        <input required
+                          class="text-sm w-full lg:text-lg py-2  border-gray-300 focus:outline-none focus:border-indigo-500"
+                          type="email" id="email" placeholder="lutimi@gmail.com">
+                      </div>
+                      <div class="mt-8 space-y-2">
+                        <div class="flex justify-between items-center">
+                          <label for="password" class="text-sm font-bold text-gray-700 tracking-wide">
+                            Contraseña
+                          </label>
+                        </div>
+                        <input
+                          class="w-full border-b lg:text-lg py-2 text-sm   border-gray-300 focus:outline-none focus:border-indigo-500"
+                          type="password" id="password" placeholder="Ingresa tu contraseña">
+                      </div>
+                      <div class="mt-10">
+                        <button type="submit" class="bg-indigo-500 text-gray-100  w-full rounded-full tracking-wide
                                     lg:py-2 font-semibold text-sm lg:text-2xl font-display focus:outline-none 
                                     focus:shadow-outline hover:bg-indigo-600
                                     shadow-lg">
-                  Log In
-                </button>
+                          Log In
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+
               </div>
-            </form>
-          </div>
-        </div>
 
-      </div>
-
-      <div class="overlay hidden"></div>
-    </section>
+              <div class="overlay hidden"></div>
+          </section>
 
 
-      
 
-        <main class="mt-16 mx-auto max-w-7xl px-4 sm:mt-24">
+
+          <main class="mt-16 mx-auto max-w-7xl px-4 sm:mt-24">
             <div class="text-center">
-                <h1 class="text-4xl tracking-tight font-extrabold text-black sm:text-5xl md:text-6xl">
-                    <span class="block xl:inline">Controla los accesos </span>
-                    <span class="block text-celeste xl:inline">de manera eficiente</span>
-                </h1>
-                <p class="mt-3 max-w-md mx-auto text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
-                    Registra y monitore los ingresos y egresos de tu edificio, barrio cerrado o empresa de forma
-                    automática con cualquier smartphone o tablet.
-                </p>
+              <h1 class="text-4xl tracking-tight font-extrabold text-black sm:text-5xl md:text-6xl">
+                <span class="block xl:inline">Controla los accesos </span>
+                <span class="block text-celeste xl:inline">de manera eficiente</span>
+              </h1>
+              <p class="mt-3 max-w-md mx-auto text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
+                Registra y monitore los ingresos y egresos de tu edificio, barrio cerrado o empresa de forma
+                automática con cualquier smartphone o tablet.
+              </p>
 
 
-                <div class="mt-5 max-w-md mx-auto sm:flex sm:justify-center md:mt-8">
-                    <div class="rounded-md shadow">
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSf_GMdX4kxT_rzaVuhqr7b3m8qY0Lf1LV02bq-VEBjnHTOlqw/viewform " target="_blank"
-                            class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-black bg-celeste hover:bg-dgreen md:py-4 md:text-lg md:px-10">
-                            Saber más!
-                        </a>
-                    </div>
-                    <div class=" rounded-md  sm:mt-0 sm:ml-3">
-                        <a href="https://www.figma.com/proto/uPIHAfQBHtl6VKtNiDkl6h/Watch-E?page-id=0%3A1&node-id=2%3A10&viewport=634%2C594%2C0.20064178109169006&scaling=scale-down" target="_blank" class="w-full video flex items-center justify-center border-black border-1 hover:bg-gray-400 px-8 py-3 border border-transparent text-base font-medium rounded-md 
+              <div class="mt-5 max-w-md mx-auto sm:flex sm:justify-center md:mt-8">
+                <div class="rounded-md shadow">
+                  <a href="https://docs.google.com/forms/d/e/1FAIpQLSf_GMdX4kxT_rzaVuhqr7b3m8qY0Lf1LV02bq-VEBjnHTOlqw/viewform "
+                    target="_blank"
+                    class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-black bg-celeste hover:bg-dgreen md:py-4 md:text-lg md:px-10">
+                    Saber más!
+                  </a>
+                </div>
+                <div class=" rounded-md  sm:mt-0 sm:ml-3">
+                  <a href="https://www.figma.com/proto/uPIHAfQBHtl6VKtNiDkl6h/Watch-E?page-id=0%3A1&node-id=2%3A10&viewport=634%2C594%2C0.20064178109169006&scaling=scale-down"
+                    target="_blank" class="w-full video flex items-center justify-center border-black border-1 hover:bg-gray-400 px-8 py-3 border border-transparent text-base font-medium rounded-md 
                         ext-celeste bg-white  md:py-4 md:text-lg md:px-10" ">
                          Demo
                         </a>
       </div>
-
 
 
     </div>
@@ -304,634 +308,639 @@
 
 
 
-  <section id="seguridad">
-    <div class=" relative pt-16 pb-32 overflow-hidden ">
-      <div aria-hidden=" true " class=" absolute inset-x-0 top-0 h-48 "></div>
-      <div class=" relative ">
-        <div class=" lg:mx-auto lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-2 lg:grid-flow-col-dense lg:gap-24 ">
-          <div class=" px-4 max-w-xl mx-auto sm:px-6 lg:py-16 lg:max-w-none lg:mx-0 lg:px-0 ">
-            <div>
-              <div>
-                <span class=" h-12 w-12 rounded-md flex items-center justify-center bg-celeste ">
-                  <!-- Heroicon name: outline/inbox -->
-                  <svg class=" h-6 w-6 text-black " xmlns=" http://www.w3.org/2000/svg " fill=" none " viewBox=" 0 0 24
-                      24 "
-                    stroke=" currentColor " aria-hidden=" true ">
-                    <path stroke-linecap=" round " stroke-linejoin=" round " stroke-width=" 2 "
-                      d=" M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1
+
+<section>
+
+  <div class="module">
+    <div class="scroll2 flex space-x-24  ">
+      <img class="mx-4  h-96 rounded-md " src="public/img/mk/Onboard.png"brand">
+      <img class="mx-4  h-96 rounded-md " src="public/img/mk/Inicio de session.png" alt="brand">
+      <img class="mx-4  h-96 rounded-md " src="public/img/mk/home.png" alt="brand">
+      <img class="mx-4  h-96 rounded-md " src="public/img/mk/Elegir ubicacion.png" alt="brand">
+      <img class="mx-4  h-96 rounded-md " src="public/img/mk/Perfil.png" alt="brand">
+      <img class="mx-4  h-96 rounded-md " src="public/img/mk/Tipo de usuario.png" alt="brand">
+      <img class="mx-4  h-96 rounded-md " src="public/img/mk/Reservas 1.png" alt="brand">
+      <img class="mx-4  h-96 rounded-md " src="public/img/mk/Reservas 2.png" alt="brand">
+      <img class="mx-4  h-96 rounded-md " src="public/img/mk/Historial.png" alt="brand">
+      
+      <img class="mx-4  h-96 rounded-md " src="public/img/mk/Reservas 5.png" alt="brand">
+      <img class="mx-4  h-96 rounded-md " src="public/img/mk/Reservas 6.png" alt="brand">
+
+    </div>
+  </div>
+</section>
+  <section id=" seguridad">
+                    <div class=" relative pt-16 pb-32 overflow-hidden ">
+                      <div aria-hidden=" true " class=" absolute inset-x-0 top-0 h-48 "></div>
+                      <div class=" relative ">
+                        <div
+                          class=" lg:mx-auto lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-2 lg:grid-flow-col-dense lg:gap-24 ">
+                          <div class=" px-4 max-w-xl mx-auto sm:px-6 lg:py-16 lg:max-w-none lg:mx-0 lg:px-0 ">
+                            <div>
+                              <div>
+                                <span class=" h-12 w-12 rounded-md flex items-center justify-center bg-celeste ">
+                                  <!-- Heroicon name: outline/inbox -->
+                                  <svg class=" h-6 w-6 text-black " xmlns=" http://www.w3.org/2000/svg " fill=" none "
+                                    viewBox=" 0 0 24
+                      24 " stroke=" currentColor " aria-hidden=" true ">
+                                    <path stroke-linecap=" round " stroke-linejoin=" round " stroke-width=" 2 " d=" M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1
                       0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586
                       13H4 " />
-                  </svg>
-                </span>
-              </div>
-              <div class=" mt-6 ">
-                <h2 class=" text-3xl font-extrabold tracking-tight text-gray-900 ">
-                  Seguridad y confianza
+                                  </svg>
+                                </span>
+                              </div>
+                              <div class=" mt-6 ">
+                                <h2 class=" text-3xl font-extrabold tracking-tight text-gray-900 ">
+                                  Seguridad y confianza
 
-                </h2>
-                <p class=" mt-4 text-lg text-gray-500 ">
-                  Registra las temperatura de los ingresos y egresos de tu edificio, barrio cerrado o
-                  empresa de
-                  forma
-                  automática .
-                </p>
-                <div class=" mt-6 ">
-                  <a href=" # "
-                    class=" inline-flex px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm
+                                </h2>
+                                <p class=" mt-4 text-lg text-gray-500 ">
+                                  Registra las temperatura de los ingresos y egresos de tu edificio, barrio cerrado o
+                                  empresa de
+                                  forma
+                                  automática .
+                                </p>
+                                <div class=" mt-6 ">
+                                  <a href=" # " class=" inline-flex px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm
                       text-black bg-celeste ">
-                    Empieza
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class=" mt-8 border-t border-gray-200 pt-6 ">
-              <blockquote>
-                <div>
-                  <p class=" text-base text-gray-500 ">
-                    Grandes resultados
-                  </p>
-                </div>
-                <footer class=" mt-3 ">
-                  <div class=" flex items-center space-x-3 ">
-                    <div class=" flex-shrink-0 ">
-                      <img class=" h-6 w-6 rounded-full "
-                        src="
+                                    Empieza
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
+                            <div class=" mt-8 border-t border-gray-200 pt-6 ">
+                              <blockquote>
+                                <div>
+                                  <p class=" text-base text-gray-500 ">
+                                    Grandes resultados
+                                  </p>
+                                </div>
+                                <footer class=" mt-3 ">
+                                  <div class=" flex items-center space-x-3 ">
+                                    <div class=" flex-shrink-0 ">
+                                      <img class=" h-6 w-6 rounded-full "
+                                        src="
                       https://images.unsplash.com/photo-1618018353335-97ebcde0c2cc?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=358&q=80 "
-                        alt=" ">
-                    </div>
-                    <div class=" text-base font-medium text-gray-700 ">
-                      Luis Ticona
-                    </div>
-                  </div>
-                </footer>
-              </blockquote>
-            </div>
-          </div>
-          <div class=" mt-12 sm:mt-16 lg:mt-0 ">
+                                        alt=" ">
+                                    </div>
+                                    <div class=" text-base font-medium text-gray-700 ">
+                                      Luis Ticona
+                                    </div>
+                                  </div>
+                                </footer>
+                              </blockquote>
+                            </div>
+                          </div>
+                          <div class=" mt-12 sm:mt-16 lg:mt-0 ">
 
 
-            <div class=" reveal r-right pl-4 -mr-48 sm:pl-6 md:-mr-16 lg:px-0 lg:m-0 lg:relative lg:h-full ">
-              <img
-                class=" sm:h-94w-full rounded-xl shadow-xl ring-1 ring-black ring-opacity-5 lg:absolute lg:left-0
-                      lg:h-full lg:w-auto lg:max-w-none "
-                src=" public/img/reportes.png " alt=" Inbox user interface ">
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class=" mt-24 ">
-        <div class=" lg:mx-auto lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-2 lg:grid-flow-col-dense lg:gap-24 ">
-          <div class=" px-4 max-w-xl mx-auto sm:px-6 lg:py-32 lg:max-w-none lg:mx-0 lg:px-0 lg:col-start-2 ">
-            <div>
-              <div>
-                <span class=" h-12 w-12 rounded-md flex items-center justify-center bg-celeste ">
-                  <!-- Heroicon name: outline/sparkles -->
-                  <svg class=" h-6 w-6 text-black " xmlns=" http://www.w3.org/2000/svg " fill=" none " viewBox=" 0 0 24
-                      24 "
-                    stroke=" currentColor " aria-hidden=" true ">
-                    <path stroke-linecap=" round " stroke-linejoin=" round " stroke-width=" 2 "
-                      d=" M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5
+                            <div
+                              class=" reveal r-right pl-4 -mr-48 sm:pl-6 md:-mr-16 lg:px-0 lg:m-0 lg:relative lg:h-full ">
+                              <img class=" sm:h-94w-full rounded-xl shadow-xl ring-1 ring-black ring-opacity-5 lg:absolute lg:left-0
+                      lg:h-full lg:w-auto lg:max-w-none " src=" public/img/sm.png " alt=" Inbox user interface ">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class=" mt-24 ">
+                        <div
+                          class=" lg:mx-auto lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-2 lg:grid-flow-col-dense lg:gap-24 ">
+                          <div
+                            class=" px-4 max-w-xl mx-auto sm:px-6 lg:py-32 lg:max-w-none lg:mx-0 lg:px-0 lg:col-start-2 ">
+                            <div>
+                              <div>
+                                <span class=" h-12 w-12 rounded-md flex items-center justify-center bg-celeste ">
+                                  <!-- Heroicon name: outline/sparkles -->
+                                  <svg class=" h-6 w-6 text-black " xmlns=" http://www.w3.org/2000/svg " fill=" none "
+                                    viewBox=" 0 0 24
+                      24 " stroke=" currentColor " aria-hidden=" true ">
+                                    <path stroke-linecap=" round " stroke-linejoin=" round " stroke-width=" 2 " d=" M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5
                       12l5.714-2.143L13 3z " />
-                  </svg>
-                </span>
-              </div>
-              <div class=" mt-6 ">
-                <h2 class=" text-3xl font-extrabold tracking-tight text-gray-900 ">
-                  Ingresos sellados con tecnología Blockchain
-                </h2>
-                <p class=" mt-4 text-lg text-gray-500 ">
-                  Watch-E utiliza Blockchain como una capa de seguridad extra a los registros de ingresos y
-                  egresos
-                  a
-                  las locaciones. De esta manera, se asegura que los registros son inmutables y no pueden
-                  ser
-                  modificados.
-                </p>
-                <div class=" mt-6 ">
-                  <a href=" # "
-                    class=" inline-flex px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm
+                                  </svg>
+                                </span>
+                              </div>
+                              <div class=" mt-6 ">
+                                <h2 class=" text-3xl font-extrabold tracking-tight text-gray-900 ">
+                                  Ingresos sellados con tecnología Blockchain
+                                </h2>
+                                <p class=" mt-4 text-lg text-gray-500 ">
+                                  Watch-E utiliza Blockchain como una capa de seguridad extra a los registros de
+                                  ingresos y
+                                  egresos
+                                  a
+                                  las locaciones. De esta manera, se asegura que los registros son inmutables y no
+                                  pueden
+                                  ser
+                                  modificados.
+                                </p>
+                                <div class=" mt-6 ">
+                                  <a href=" # " class=" inline-flex px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm
                       text-black bg-celeste ">
-                    GO</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class=" mt-12 sm:mt-16 lg:mt-0 lg:col-start-1 ">
-            <div class=" pr-4 -ml-48 sm:pr-6 md:-ml-16 lg:px-0 lg:m-0 lg:relative lg:h-full ">
-              <img
-                class=" reveal r-left w-full rounded-xl shadow-xl ring-1 ring-black ring-opacity-5 lg:absolute
-                      lg:right-0 lg:h-full lg:w-auto lg:max-w-none "
-                src=" public/img/Screenshot_1.png " alt=" Customer profile user interface ">
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+                                    GO</a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class=" mt-12 sm:mt-16 lg:mt-0 lg:col-start-1 ">
+                            <div class=" pr-4 -ml-48 sm:pr-6 md:-ml-16 lg:px-0 lg:m-0 lg:relative lg:h-full ">
+                              <img class=" reveal r-left w-full rounded-xl shadow-xl ring-1 ring-black ring-opacity-5 lg:absolute
+                      lg:right-0 lg:h-full lg:w-auto lg:max-w-none " src=" public/img/Screenshot_1.png "
+                                alt=" Customer profile user interface ">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
 
-  </section>
-
+      </section>
 
 
-  <section id="caracteristicas">
-    <div class=" relative bg-white py-16 sm:py-16 lg:py-8 ">
-      <div class=" mx-auto max-w-md px-4 text-center sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl ">
+ 
 
 
-        <p class=" mt-2 text-3xl font-extrabold text-gray-900 tracking-tight sm:text-4xl ">
-          Características
-        </p>
-        <div class=" mt-12 ">
-          <div class=" grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 ">
-            <div class=" pt-6 ">
-              <div class=" flow-root bg-white rounded-lg px-6 pb-8 ">
-                <div class=" -mt-6 ">
-                  <div>
-                    <span class=" inline-flex items-center justify-center p-3 bg-celeste rounded-md shadow-lg ">
-                      <!-- Heroicon name: outline/cloud-upload -->
-                      <svg class=" h-6 w-6 text-black " xmlns=" http://www.w3.org/2000/svg " fill=" none " viewBox=" 0
-                      0 24 24 "
-                        stroke=" currentColor " aria-hidden=" true ">
-                        <path stroke-linecap=" round " stroke-linejoin=" round " stroke-width=" 2 "
-                          d=" M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12 " />
-                      </svg>
-                    </span>
+      <section id="caracteristicas">
+        <div class=" relative bg-white py-16 sm:py-16 lg:py-8 ">
+          <div class=" mx-auto max-w-md px-4 text-center sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl ">
+
+
+            <p class=" mt-2 text-3xl font-extrabold text-gray-900 tracking-tight sm:text-4xl ">
+              Características
+            </p>
+            <div class=" mt-12 ">
+              <div class=" grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 ">
+                <div class=" pt-6 ">
+                  <div class=" flow-root bg-white rounded-lg px-6 pb-8 ">
+                    <div class=" -mt-6 ">
+                      <div>
+                        <span class=" inline-flex items-center justify-center p-3 bg-celeste rounded-md shadow-lg ">
+                          <!-- Heroicon name: outline/cloud-upload -->
+                          <svg class=" h-6 w-6 text-black " xmlns=" http://www.w3.org/2000/svg " fill=" none " viewBox=" 0
+                      0 24 24 " stroke=" currentColor " aria-hidden=" true ">
+                            <path stroke-linecap=" round " stroke-linejoin=" round " stroke-width=" 2 "
+                              d=" M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12 " />
+                          </svg>
+                        </span>
+                      </div>
+                      <h3 class=" mt-8 text-lg font-medium text-gray-900 tracking-tight ">Agiliza el ingreso y
+                        egreso de
+                        visitantes</h3>
+                      <p class=" mt-5 text-base text-gray-500 ">
+                        Con la implementación de Watch-E ya no se formarán filas de autos o personas esperando
+                        para
+                        ingresar
+                        a la locación, por lo que la gente estará más feliz y dispuesta a volver.
+                      </p>
+                    </div>
                   </div>
-                  <h3 class=" mt-8 text-lg font-medium text-gray-900 tracking-tight ">Agiliza el ingreso y
-                    egreso de
-                    visitantes</h3>
-                  <p class=" mt-5 text-base text-gray-500 ">
-                    Con la implementación de Watch-E ya no se formarán filas de autos o personas esperando
-                    para
-                    ingresar
-                    a la locación, por lo que la gente estará más feliz y dispuesta a volver.
-                  </p>
                 </div>
-              </div>
-            </div>
 
-            <div class=" pt-6 ">
-              <div class=" flow-root bg-white rounded-lg px-6 pb-8 ">
-                <div class=" -mt-6 ">
-                  <div>
-                    <span class=" inline-flex items-center justify-center p-3 bg-celeste rounded-md shadow-lg ">
-                      <!-- Heroicon name: outline/lock-closed -->
-                      <svg class=" h-6 w-6 text-black " xmlns=" http://www.w3.org/2000/svg " fill=" none " viewBox=" 0
-                      0 24 24 "
-                        stroke=" currentColor " aria-hidden=" true ">
-                        <path stroke-linecap=" round " stroke-linejoin=" round " stroke-width=" 2 "
-                          d=" M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0
+                <div class=" pt-6 ">
+                  <div class=" flow-root bg-white rounded-lg px-6 pb-8 ">
+                    <div class=" -mt-6 ">
+                      <div>
+                        <span class=" inline-flex items-center justify-center p-3 bg-celeste rounded-md shadow-lg ">
+                          <!-- Heroicon name: outline/lock-closed -->
+                          <svg class=" h-6 w-6 text-black " xmlns=" http://www.w3.org/2000/svg " fill=" none " viewBox=" 0
+                      0 24 24 " stroke=" currentColor " aria-hidden=" true ">
+                            <path stroke-linecap=" round " stroke-linejoin=" round " stroke-width=" 2 " d=" M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0
                       00-8 0v4h8z " />
-                      </svg>
-                    </span>
+                          </svg>
+                        </span>
+                      </div>
+                      <h3 class=" mt-8 text-lg font-medium text-gray-900 tracking-tight ">Aumenta la eficiencia
+                      </h3>
+                      <p class=" mt-5 text-base text-gray-500 ">
+                        Cada ingreso registrado por Watch-E se actualiza automáticamente en la Web. La
+                        seguridad/administración de la locación y los propietarios de cada unidad particular
+                        pueden
+                        consultar en cualquier momento los ingresos para las unidades correspondientes
+                      </p>
+                    </div>
                   </div>
-                  <h3 class=" mt-8 text-lg font-medium text-gray-900 tracking-tight ">Aumenta la eficiencia
-                  </h3>
-                  <p class=" mt-5 text-base text-gray-500 ">
-                    Cada ingreso registrado por Watch-E se actualiza automáticamente en la Web. La
-                    seguridad/administración de la locación y los propietarios de cada unidad particular
-                    pueden
-                    consultar en cualquier momento los ingresos para las unidades correspondientes
-                  </p>
                 </div>
-              </div>
-            </div>
 
-            <div class=" pt-6 ">
-              <div class=" flow-root bg-white rounded-lg px-6 pb-8 ">
-                <div class=" -mt-6 ">
-                  <div>
-                    <span class=" inline-flex items-center justify-center p-3 bg-celeste rounded-md shadow-lg ">
-                      <!-- Heroicon name: outline/refresh -->
-                      <svg class=" h-6 w-6 text-black " xmlns=" http://www.w3.org/2000/svg " fill=" none " viewBox=" 0
-                      0 24 24 "
-                        stroke=" currentColor " aria-hidden=" true ">
-                        <path stroke-linecap=" round " stroke-linejoin=" round " stroke-width=" 2 "
-                          d=" M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0
+                <div class=" pt-6 ">
+                  <div class=" flow-root bg-white rounded-lg px-6 pb-8 ">
+                    <div class=" -mt-6 ">
+                      <div>
+                        <span class=" inline-flex items-center justify-center p-3 bg-celeste rounded-md shadow-lg ">
+                          <!-- Heroicon name: outline/refresh -->
+                          <svg class=" h-6 w-6 text-black " xmlns=" http://www.w3.org/2000/svg " fill=" none " viewBox=" 0
+                      0 24 24 " stroke=" currentColor " aria-hidden=" true ">
+                            <path stroke-linecap=" round " stroke-linejoin=" round " stroke-width=" 2 " d=" M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0
                       01-15.357-2m15.357 2H15 " />
-                      </svg>
-                    </span>
+                          </svg>
+                        </span>
+                      </div>
+                      <h3 class=" mt-8 text-lg font-medium text-gray-900 tracking-tight ">Facilita la tarea de los
+                        guardias
+                      </h3>
+                      <p class=" mt-5 text-base text-gray-500 ">
+                        Gracias a su interfaz simple y amigable, los registros de personas en Watch-E se
+                        realizan de
+                        forma
+                        automática con tan solo algunos clics, por lo que los trabajadores también estarán más
+                        felices y
+                        motivados.
+                      </p>
+                    </div>
                   </div>
-                  <h3 class=" mt-8 text-lg font-medium text-gray-900 tracking-tight ">Facilita la tarea de los
-                    guardias
-                  </h3>
-                  <p class=" mt-5 text-base text-gray-500 ">
-                    Gracias a su interfaz simple y amigable, los registros de personas en Watch-E se
-                    realizan de
-                    forma
-                    automática con tan solo algunos clics, por lo que los trabajadores también estarán más
-                    felices y
-                    motivados.
-                  </p>
                 </div>
-              </div>
-            </div>
 
-            <div class=" pt-6 ">
-              <div class=" flow-root bg-white rounded-lg px-6 pb-8 ">
-                <div class=" -mt-6 ">
-                  <div>
-                    <span class=" inline-flex items-center justify-center p-3 bg-celeste rounded-md shadow-lg ">
-                      <!-- Heroicon name: outline/shield-check -->
-                      <svg class=" h-6 w-6 text-black " xmlns=" http://www.w3.org/2000/svg " fill=" none " viewBox=" 0
-                      0 24 24 "
-                        stroke=" currentColor " aria-hidden=" true ">
-                        <path stroke-linecap=" round " stroke-linejoin=" round " stroke-width=" 2 "
-                          d=" M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02
+                <div class=" pt-6 ">
+                  <div class=" flow-root bg-white rounded-lg px-6 pb-8 ">
+                    <div class=" -mt-6 ">
+                      <div>
+                        <span class=" inline-flex items-center justify-center p-3 bg-celeste rounded-md shadow-lg ">
+                          <!-- Heroicon name: outline/shield-check -->
+                          <svg class=" h-6 w-6 text-black " xmlns=" http://www.w3.org/2000/svg " fill=" none " viewBox=" 0
+                      0 24 24 " stroke=" currentColor " aria-hidden=" true ">
+                            <path stroke-linecap=" round " stroke-linejoin=" round " stroke-width=" 2 " d=" M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02
                       12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622
                       0-1.042-.133-2.052-.382-3.016z " />
-                      </svg>
-                    </span>
+                          </svg>
+                        </span>
+                      </div>
+                      <h3 class=" mt-8 text-lg font-medium text-gray-900 tracking-tight ">Minimiza errores humanos
+                      </h3>
+                      <p class=" mt-5 text-base text-gray-500 ">
+                        Watch-E registra quién dio acceso a cada visitante, las coordenadas donde fue habilitado
+                        y el
+                        horario de ingreso y egreso. En caso de que ocurra algún evento inusual, será cuestión
+                        de
+                        segundos
+                        obtener la información de todas las visitas registradas en ese momento.
+                      </p>
+                    </div>
                   </div>
-                  <h3 class=" mt-8 text-lg font-medium text-gray-900 tracking-tight ">Minimiza errores humanos
-                  </h3>
-                  <p class=" mt-5 text-base text-gray-500 ">
-                    Watch-E registra quién dio acceso a cada visitante, las coordenadas donde fue habilitado
-                    y el
-                    horario de ingreso y egreso. En caso de que ocurra algún evento inusual, será cuestión
-                    de
-                    segundos
-                    obtener la información de todas las visitas registradas en ese momento.
-                  </p>
                 </div>
-              </div>
-            </div>
 
-            <div class=" pt-6 ">
-              <div class=" flow-root bg-white rounded-lg px-6 pb-8 ">
-                <div class=" -mt-6 ">
-                  <div>
-                    <span class=" inline-flex items-center justify-center p-3 bg-celeste rounded-md shadow-lg ">
-                      <!-- Heroicon name: outline/cog -->
-                      <svg class=" h-6 w-6 text-black " xmlns=" http://www.w3.org/2000/svg " fill=" none " viewBox=" 0
-                      0 24 24 "
-                        stroke=" currentColor " aria-hidden=" true ">
-                        <path stroke-linecap=" round " stroke-linejoin=" round " stroke-width=" 2 "
-                          d=" M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94
+                <div class=" pt-6 ">
+                  <div class=" flow-root bg-white rounded-lg px-6 pb-8 ">
+                    <div class=" -mt-6 ">
+                      <div>
+                        <span class=" inline-flex items-center justify-center p-3 bg-celeste rounded-md shadow-lg ">
+                          <!-- Heroicon name: outline/cog -->
+                          <svg class=" h-6 w-6 text-black " xmlns=" http://www.w3.org/2000/svg " fill=" none " viewBox=" 0
+                      0 24 24 " stroke=" currentColor " aria-hidden=" true ">
+                            <path stroke-linecap=" round " stroke-linejoin=" round " stroke-width=" 2 " d=" M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94
                       3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066
                       2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35
                       0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0
                       00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31
                       2.37-2.37.996.608 2.296.07 2.572-1.065z " />
-                        <path stroke-linecap=" round " stroke-linejoin=" round " stroke-width=" 2 "
-                          d=" M15 12a3 3 0 11-6 0 3 3 0 016 0z " />
-                      </svg>
-                    </span>
-                  </div>
-                  <h3 class=" mt-8 text-lg font-medium text-gray-900 tracking-tight ">Facil uso y gestion de
-                    la app
-                  </h3>
-                  <p class=" mt-5 text-base text-gray-500 ">
-                    Premite a nuestros usuarios utilizar la app de manera facil e interactiva
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class=" pt-6 ">
-              <div class=" flow-root bg-white rounded-lg px-6 pb-8 ">
-                <div class=" -mt-6 ">
-                  <div>
-                    <span class=" inline-flex items-center justify-center p-3 bg-celeste rounded-md shadow-lg ">
-                      <!-- Heroicon name: outline/server -->
-                      <svg class=" h-6 w-6 text-black " xmlns=" http://www.w3.org/2000/svg " fill=" none " viewBox=" 0
-                      0 24 24 "
-                        stroke=" currentColor " aria-hidden=" true ">
-                        <path stroke-linecap=" round " stroke-linejoin=" round " stroke-width=" 2 "
-                          d=" M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2
-                      2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01 " />
-                      </svg>
-                    </span>
-                  </div>
-                  <h3 class=" mt-8 text-lg font-medium text-gray-900 tracking-tight ">Protege tu salud</h3>
-                  <p class=" mt-5 text-base text-gray-500 ">
-                    Nos permite conocer la temperatura de todos los usuarios registrados.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-
-
-
-
-
-
-  <section id="plans">
-    <div class=" bg-white ">
-      <div class=" pt-12 px-4 sm:px-6 lg:px-8 lg:pt-20 ">
-        <div class=" text-center ">
-          <h2 class=" text-3xl leading-6 font-semibold text-dgreen uppercase tracking-wider ">
-            Planes
-          </h2>
-          <p class=" mt-2 text-3xl font-extrabold text-dark sm:text-4xl lg:text-5xl ">
-            Elige el plan que se adapte a tus necesidades
-          </p>
-          <p class=" mt-3 max-w-4xl mx-auto text-xl text-dgreen sm:mt-5 sm:text-2xl ">
-            30 días totalmente GRATIS, pruébalo y cuéntanos cómo te fue!
-          </p>
-        </div>
-      </div>
-
-      <div class=" mt-16 bg-white pb-12 lg:mt-20 lg:pb-20 ">
-        <div class=" relative z-0 ">
-          <div class=" absolute inset-0 h-5/6 bg-gradient-to-r from-celeste via-blue-200 to-celeste lg:h-2/3 ">
-          </div>
-          <div class=" max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
-            <div class=" relative lg:grid lg:grid-cols-7 ">
-              <div
-                class=" mx-auto max-w-md lg:mx-0 lg:max-w-none lg:col-start-1 lg:col-end-3 lg:row-start-2 lg:row-end-3 ">
-                <div class=" h-full flex flex-col rounded-lg shadow-lg overflow-hidden lg:rounded-none lg:rounded-l-lg ">
-                  <div class=" flex-1 flex flex-col ">
-                    <div class=" bg-white px-6 py-10 ">
-                      <div>
-                        <h3 class=" text-center text-2xl font-medium text-gray-900 " id=" tier-hobby ">
-                          Condominio
-                        </h3>
-                        <div class=" mt-4 flex items-center justify-center ">
-                          <span class=" px-3 flex items-start text-6xl tracking-tight text-gray-900 ">
-                            <span class=" mt-2 mr-2 text-4xl font-medium ">
-                              S/
-                            </span>
-                            <span class=" font-extrabold ">
-                              79
-                            </span>
-                          </span>
-                          <span class=" text-xl font-medium text-gray-500 ">
-                            /mes
-                          </span>
-                        </div>
+                            <path stroke-linecap=" round " stroke-linejoin=" round " stroke-width=" 2 "
+                              d=" M15 12a3 3 0 11-6 0 3 3 0 016 0z " />
+                          </svg>
+                        </span>
                       </div>
-                    </div>
-                    <div
-                      class=" flex-1 flex flex-col justify-between border-t-2 border-gray-100 p-6 bg-white sm:p-10
-                      lg:p-6 xl:p-10 ">
-                      <ul class=" space-y-4 ">
-                        <li class=" flex items-start ">
-                          <div class=" flex-shrink-0 ">
-
-                            <svg class=" flex-shrink-0 h-6 w-6 text-green-500 " xmlns=" http://www.w3.org/2000/svg "
-                              fill=" none " viewBox=" 0 0 24 24 " stroke=" currentColor " aria-hidden=" true ">
-                              <path stroke-linecap=" round " stroke-linejoin=" round " stroke-width=" 2 "
-                                d=" M5 13l4 4L19 7 " />
-                            </svg>
-                          </div>
-                          <p class=" ml-3 text-base font-medium text-gray-500 ">
-                            1 locación
-                          </p>
-                        </li>
-
-                        <li class=" flex items-start ">
-                          <div class=" flex-shrink-0 ">
-
-                            <svg class=" flex-shrink-0 h-6 w-6 text-green-500 " xmlns=" http://www.w3.org/2000/svg "
-                              fill=" none " viewBox=" 0 0 24 24 " stroke=" currentColor " aria-hidden=" true ">
-                              <path stroke-linecap=" round " stroke-linejoin=" round " stroke-width=" 2 "
-                                d=" M5 13l4 4L19 7 " />
-                            </svg>
-                          </div>
-                          <p class=" ml-3 text-base font-medium text-gray-500 ">
-                            Hasta 30 unidades funcionales
-                          </p>
-                        </li>
-
-                        <li class=" flex items-start ">
-                          <div class=" flex-shrink-0 ">
-
-                            <svg class=" flex-shrink-0 h-6 w-6 text-green-500 " xmlns=" http://www.w3.org/2000/svg "
-                              fill=" none " viewBox=" 0 0 24 24 " stroke=" currentColor " aria-hidden=" true ">
-                              <path stroke-linecap=" round " stroke-linejoin=" round " stroke-width=" 2 "
-                                d=" M5 13l4 4L19 7 " />
-                            </svg>
-                          </div>
-                          <p class=" ml-3 text-base font-medium text-gray-500 ">
-                            Asesoaramiento en la implementación
-                          </p>
-                        </li>
-                      </ul>
-                      <div class=" mt-8 ">
-                        <div class=" rounded-lg shadow-md ">
-                          <a href=" https://forms.gle/U2wxt3agGdUXB1Cr5 "
-                            class=" block w-full text-center rounded-lg border border-transparent bg-white px-6 py-3
-                      text-base font-medium text-celeste hover:bg-white "
-                            aria-describedby=" tier-hobby target="_blank"> 
-                            Adquirir
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div
-                class=" mt-10 max-w-lg mx-auto lg:mt-0 lg:max-w-none lg:mx-0 lg:col-start-3 lg:col-end-6 lg:row-start-1
-                      lg:row-end-4 ">
-                <div class=" relative z-10 rounded-lg shadow-xl ">
-                  <div class=" pointer-events-none absolute inset-0 rounded-lg border-2 border-dgreen "
-                    aria-hidden=" true "></div>
-                  <div class=" absolute inset-x-0 top-0 transform translate-y-px ">
-                    <div class=" flex justify-center transform -translate-y-1/2 ">
-                      <span
-                        class=" inline-flex rounded-full bg-celeste px-4 py-1 text-sm font-semibold tracking-wider
-                      uppercase text-black ">
-                        Mas Popular
-                      </span>
-                    </div>
-                  </div>
-                  <div class=" bg-white rounded-t-lg px-6 pt-12 pb-10 ">
-                    <div>
-                      <h3 class=" text-center text-3xl font-semibold text-gray-900 sm:-mx-6 " id=" tier-growth ">
-                        Pueblo
+                      <h3 class=" mt-8 text-lg font-medium text-gray-900 tracking-tight ">Facil uso y gestion de
+                        la app
                       </h3>
-                      <div class=" mt-4 flex items-center justify-center ">
-                        <span class=" px-3 flex items-start text-6xl tracking-tight text-gray-900 sm:text-6xl ">
-                          <span class=" mt-2 mr-2 text-4xl font-medium ">
-                            S/
-                          </span>
-                          <span class=" font-extrabold ">
-                            149
-                          </span>
-                        </span>
-                        <span class=" text-2xl font-medium text-gray-500 ">
-                          /mes
-                        </span>
-                      </div>
+                      <p class=" mt-5 text-base text-gray-500 ">
+                        Premite a nuestros usuarios utilizar la app de manera facil e interactiva
+                      </p>
                     </div>
                   </div>
-                  <div class=" border-t-2 border-gray-100 rounded-b-lg pt-10 pb-8 px-6 bg-white sm:px-10 sm:py-10 ">
-                    <ul class=" space-y-4 ">
-                      <li class=" flex items-start ">
-                        <div class=" flex-shrink-0 ">
-                          <!-- Heroicon name: outline/check -->
-                          <svg class=" flex-shrink-0 h-6 w-6 text-green-500 " xmlns=" http://www.w3.org/2000/svg "
-                            fill=" none " viewBox=" 0 0 24 24 " stroke=" currentColor " aria-hidden=" true ">
-                            <path stroke-linecap=" round " stroke-linejoin=" round " stroke-width=" 2 " d=" M5 13l4
-                      4L19 7 " />
+                </div>
+
+                <div class=" pt-6 ">
+                  <div class=" flow-root bg-white rounded-lg px-6 pb-8 ">
+                    <div class=" -mt-6 ">
+                      <div>
+                        <span class=" inline-flex items-center justify-center p-3 bg-celeste rounded-md shadow-lg ">
+                          <!-- Heroicon name: outline/server -->
+                          <svg class=" h-6 w-6 text-black " xmlns=" http://www.w3.org/2000/svg " fill=" none " viewBox=" 0
+                      0 24 24 " stroke=" currentColor " aria-hidden=" true ">
+                            <path stroke-linecap=" round " stroke-linejoin=" round " stroke-width=" 2 " d=" M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2
+                      2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01 " />
                           </svg>
-                        </div>
-                        <p class=" ml-3 text-base font-medium text-gray-500 ">
-                          1 locación
-                        </p>
-                      </li>
-
-                      <li class=" flex items-start ">
-                        <div class=" flex-shrink-0 ">
-                          <!-- Heroicon name: outline/check -->
-                          <svg class=" flex-shrink-0 h-6 w-6 text-green-500 " xmlns=" http://www.w3.org/2000/svg "
-                            fill=" none " viewBox=" 0 0 24 24 " stroke=" currentColor " aria-hidden=" true ">
-                            <path stroke-linecap=" round " stroke-linejoin=" round " stroke-width=" 2 " d=" M5 13l4
-                      4L19 7 " />
-                          </svg>
-                        </div>
-                        <p class=" ml-3 text-base font-medium text-gray-500 ">
-                          Hasta 300 unidades funcionales
-                        </p>
-                      </li>
-
-                      <li class=" flex items-start ">
-                        <div class=" flex-shrink-0 ">
-                          <!-- Heroicon name: outline/check -->
-                          <svg class=" flex-shrink-0 h-6 w-6 text-green-500 " xmlns=" http://www.w3.org/2000/svg "
-                            fill=" none " viewBox=" 0 0 24 24 " stroke=" currentColor " aria-hidden=" true ">
-                            <path stroke-linecap=" round " stroke-linejoin=" round " stroke-width=" 2 " d=" M5 13l4
-                      4L19 7 " />
-                          </svg>
-                        </div>
-                        <p class=" ml-3 text-base font-medium text-gray-500 ">
-                          Asesoaramiento en la implementación
-                        </p>
-                      </li>
-
-                      <li class=" flex items-start ">
-                        <div class=" flex-shrink-0 ">
-                          <!-- Heroicon name: outline/check -->
-                          <svg class=" flex-shrink-0 h-6 w-6 text-green-500 " xmlns=" http://www.w3.org/2000/svg "
-                            fill=" none " viewBox=" 0 0 24 24 " stroke=" currentColor " aria-hidden=" true ">
-                            <path stroke-linecap=" round " stroke-linejoin=" round " stroke-width=" 2 " d=" M5 13l4
-                      4L19 7 " />
-                          </svg>
-                        </div>
-                        <p class=" ml-3 text-base font-medium text-gray-500 ">
-                          Soporte técnico personalizado
-                        </p>
-                      </li>
-
-
-                    </ul>
-                    <div class=" mt-10 ">
-                      <div class=" rounded-lg shadow-md "> 
-                        <a href=" https://forms.gle/U2wxt3agGdUXB1Cr5 " target="_blank"
-                          class=" block w-full text-center rounded-lg border border-transparent bg-celeste px-6 py-4
-                      text-xl leading-6 font-medium text-black hover:bg-celeste "
-                          aria-describedby=" tier-growth ">
-                          Adquirir
-                        </a>
+                        </span>
                       </div>
+                      <h3 class=" mt-8 text-lg font-medium text-gray-900 tracking-tight ">Protege tu salud</h3>
+                      <p class=" mt-5 text-base text-gray-500 ">
+                        Nos permite conocer la temperatura de todos los usuarios registrados.
+                      </p>
                     </div>
                   </div>
                 </div>
               </div>
-              <div
-                class=" mt-10 mx-auto max-w-md lg:m-0 lg:max-w-none lg:col-start-6 lg:col-end-8 lg:row-start-2
-                      lg:row-end-3 ">
-                <div class=" h-full flex flex-col rounded-lg shadow-lg overflow-hidden lg:rounded-none lg:rounded-r-lg ">
-                  <div class=" flex-1 flex flex-col ">
-                    <div class=" bg-white px-6 py-10 ">
-                      <div>
-                        <h3 class=" text-center text-2xl font-medium text-gray-900 " id=" tier-scale ">
-                          Empresa
-                        </h3>
-                        <div class=" mt-4 flex items-center justify-center ">
-                          <span class=" px-3 flex items-start text-6xl tracking-tight text-gray-900 ">
-                            <span class=" mt-2 mr-2 text-4xl font-medium ">
-                              S/
-                            </span>
-                            <span class=" font-extrabold ">
-                              500
-                            </span>
-                          </span>
-                          <span class=" text-xl font-medium text-gray-500 ">
-                            /mes
-                          </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+
+
+
+
+
+      <section id="plans">
+        <div class=" bg-white ">
+          <div class=" pt-12 px-4 sm:px-6 lg:px-8 lg:pt-20 ">
+            <div class=" text-center ">
+              <h2 class=" text-3xl leading-6 font-semibold text-dgreen uppercase tracking-wider ">
+                Planes
+              </h2>
+              <p class=" mt-2 text-3xl font-extrabold text-dark sm:text-4xl lg:text-5xl ">
+                Elige el plan que se adapte a tus necesidades
+              </p>
+              <p class=" mt-3 max-w-4xl mx-auto text-xl text-dgreen sm:mt-5 sm:text-2xl ">
+                30 días totalmente GRATIS, pruébalo y cuéntanos cómo te fue!
+              </p>
+            </div>
+          </div>
+
+          <div class=" mt-16 bg-white pb-12 lg:mt-20 lg:pb-20 ">
+            <div class=" relative z-0 ">
+              <div class=" absolute inset-0 h-5/6 bg-gradient-to-r from-celeste via-blue-200 to-celeste lg:h-2/3 ">
+              </div>
+              <div class=" max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
+                <div class=" relative lg:grid lg:grid-cols-7 ">
+                  <div
+                    class=" mx-auto max-w-md lg:mx-0 lg:max-w-none lg:col-start-1 lg:col-end-3 lg:row-start-2 lg:row-end-3 ">
+                    <div
+                      class=" h-full flex flex-col rounded-lg shadow-lg overflow-hidden lg:rounded-none lg:rounded-l-lg ">
+                      <div class=" flex-1 flex flex-col ">
+                        <div class=" bg-white px-6 py-10 ">
+                          <div>
+                            <h3 class=" text-center text-2xl font-medium text-gray-900 " id=" tier-hobby ">
+                              Condominio
+                            </h3>
+                            <div class=" mt-4 flex items-center justify-center ">
+                              <span class=" px-3 flex items-start text-6xl tracking-tight text-gray-900 ">
+                                <span class=" mt-2 mr-2 text-4xl font-medium ">
+                                  S/
+                                </span>
+                                <span class=" font-extrabold ">
+                                  79
+                                </span>
+                              </span>
+                              <span class=" text-xl font-medium text-gray-500 ">
+                                /mes
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class=" flex-1 flex flex-col justify-between border-t-2 border-gray-100 p-6 bg-white sm:p-10
+                      lg:p-6 xl:p-10 ">
+                          <ul class=" space-y-4 ">
+                            <li class=" flex items-start ">
+                              <div class=" flex-shrink-0 ">
+
+                                <svg class=" flex-shrink-0 h-6 w-6 text-green-500 " xmlns=" http://www.w3.org/2000/svg "
+                                  fill=" none " viewBox=" 0 0 24 24 " stroke=" currentColor " aria-hidden=" true ">
+                                  <path stroke-linecap=" round " stroke-linejoin=" round " stroke-width=" 2 "
+                                    d=" M5 13l4 4L19 7 " />
+                                </svg>
+                              </div>
+                              <p class=" ml-3 text-base font-medium text-gray-500 ">
+                                1 locación
+                              </p>
+                            </li>
+
+                            <li class=" flex items-start ">
+                              <div class=" flex-shrink-0 ">
+
+                                <svg class=" flex-shrink-0 h-6 w-6 text-green-500 " xmlns=" http://www.w3.org/2000/svg "
+                                  fill=" none " viewBox=" 0 0 24 24 " stroke=" currentColor " aria-hidden=" true ">
+                                  <path stroke-linecap=" round " stroke-linejoin=" round " stroke-width=" 2 "
+                                    d=" M5 13l4 4L19 7 " />
+                                </svg>
+                              </div>
+                              <p class=" ml-3 text-base font-medium text-gray-500 ">
+                                Hasta 30 unidades funcionales
+                              </p>
+                            </li>
+
+                            <li class=" flex items-start ">
+                              <div class=" flex-shrink-0 ">
+
+                                <svg class=" flex-shrink-0 h-6 w-6 text-green-500 " xmlns=" http://www.w3.org/2000/svg "
+                                  fill=" none " viewBox=" 0 0 24 24 " stroke=" currentColor " aria-hidden=" true ">
+                                  <path stroke-linecap=" round " stroke-linejoin=" round " stroke-width=" 2 "
+                                    d=" M5 13l4 4L19 7 " />
+                                </svg>
+                              </div>
+                              <p class=" ml-3 text-base font-medium text-gray-500 ">
+                                Asesoaramiento en la implementación
+                              </p>
+                            </li>
+                          </ul>
+                          <div class=" mt-8 ">
+                            <div class=" rounded-lg shadow-md ">
+                              <a href=" https://forms.gle/U2wxt3agGdUXB1Cr5 " class=" block w-full text-center rounded-lg border border-transparent bg-white px-6 py-3
+                      text-base font-medium text-celeste hover:bg-white " aria-describedby=" tier-hobby target="
+                                _blank">
+                                Adquirir
+                              </a>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
+                  </div>
+                  <div class=" mt-10 max-w-lg mx-auto lg:mt-0 lg:max-w-none lg:mx-0 lg:col-start-3 lg:col-end-6 lg:row-start-1
+                      lg:row-end-4 ">
+                    <div class=" relative z-10 rounded-lg shadow-xl ">
+                      <div class=" pointer-events-none absolute inset-0 rounded-lg border-2 border-dgreen "
+                        aria-hidden=" true "></div>
+                      <div class=" absolute inset-x-0 top-0 transform translate-y-px ">
+                        <div class=" flex justify-center transform -translate-y-1/2 ">
+                          <span class=" inline-flex rounded-full bg-celeste px-4 py-1 text-sm font-semibold tracking-wider
+                      uppercase text-black ">
+                            Mas Popular
+                          </span>
+                        </div>
+                      </div>
+                      <div class=" bg-white rounded-t-lg px-6 pt-12 pb-10 ">
+                        <div>
+                          <h3 class=" text-center text-3xl font-semibold text-gray-900 sm:-mx-6 " id=" tier-growth ">
+                            Pueblo
+                          </h3>
+                          <div class=" mt-4 flex items-center justify-center ">
+                            <span class=" px-3 flex items-start text-6xl tracking-tight text-gray-900 sm:text-6xl ">
+                              <span class=" mt-2 mr-2 text-4xl font-medium ">
+                                S/
+                              </span>
+                              <span class=" font-extrabold ">
+                                149
+                              </span>
+                            </span>
+                            <span class=" text-2xl font-medium text-gray-500 ">
+                              /mes
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class=" border-t-2 border-gray-100 rounded-b-lg pt-10 pb-8 px-6 bg-white sm:px-10 sm:py-10 ">
+                        <ul class=" space-y-4 ">
+                          <li class=" flex items-start ">
+                            <div class=" flex-shrink-0 ">
+                              <!-- Heroicon name: outline/check -->
+                              <svg class=" flex-shrink-0 h-6 w-6 text-green-500 " xmlns=" http://www.w3.org/2000/svg "
+                                fill=" none " viewBox=" 0 0 24 24 " stroke=" currentColor " aria-hidden=" true ">
+                                <path stroke-linecap=" round " stroke-linejoin=" round " stroke-width=" 2 " d=" M5 13l4
+                      4L19 7 " />
+                              </svg>
+                            </div>
+                            <p class=" ml-3 text-base font-medium text-gray-500 ">
+                              1 locación
+                            </p>
+                          </li>
+
+                          <li class=" flex items-start ">
+                            <div class=" flex-shrink-0 ">
+                              <!-- Heroicon name: outline/check -->
+                              <svg class=" flex-shrink-0 h-6 w-6 text-green-500 " xmlns=" http://www.w3.org/2000/svg "
+                                fill=" none " viewBox=" 0 0 24 24 " stroke=" currentColor " aria-hidden=" true ">
+                                <path stroke-linecap=" round " stroke-linejoin=" round " stroke-width=" 2 " d=" M5 13l4
+                      4L19 7 " />
+                              </svg>
+                            </div>
+                            <p class=" ml-3 text-base font-medium text-gray-500 ">
+                              Hasta 300 unidades funcionales
+                            </p>
+                          </li>
+
+                          <li class=" flex items-start ">
+                            <div class=" flex-shrink-0 ">
+                              <!-- Heroicon name: outline/check -->
+                              <svg class=" flex-shrink-0 h-6 w-6 text-green-500 " xmlns=" http://www.w3.org/2000/svg "
+                                fill=" none " viewBox=" 0 0 24 24 " stroke=" currentColor " aria-hidden=" true ">
+                                <path stroke-linecap=" round " stroke-linejoin=" round " stroke-width=" 2 " d=" M5 13l4
+                      4L19 7 " />
+                              </svg>
+                            </div>
+                            <p class=" ml-3 text-base font-medium text-gray-500 ">
+                              Asesoaramiento en la implementación
+                            </p>
+                          </li>
+
+                          <li class=" flex items-start ">
+                            <div class=" flex-shrink-0 ">
+                              <!-- Heroicon name: outline/check -->
+                              <svg class=" flex-shrink-0 h-6 w-6 text-green-500 " xmlns=" http://www.w3.org/2000/svg "
+                                fill=" none " viewBox=" 0 0 24 24 " stroke=" currentColor " aria-hidden=" true ">
+                                <path stroke-linecap=" round " stroke-linejoin=" round " stroke-width=" 2 " d=" M5 13l4
+                      4L19 7 " />
+                              </svg>
+                            </div>
+                            <p class=" ml-3 text-base font-medium text-gray-500 ">
+                              Soporte técnico personalizado
+                            </p>
+                          </li>
+
+
+                        </ul>
+                        <div class=" mt-10 ">
+                          <div class=" rounded-lg shadow-md ">
+                            <a href=" https://forms.gle/U2wxt3agGdUXB1Cr5 " target="_blank" class=" block w-full text-center rounded-lg border border-transparent bg-celeste px-6 py-4
+                      text-xl leading-6 font-medium text-black hover:bg-celeste " aria-describedby=" tier-growth ">
+                              Adquirir
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class=" mt-10 mx-auto max-w-md lg:m-0 lg:max-w-none lg:col-start-6 lg:col-end-8 lg:row-start-2
+                      lg:row-end-3 ">
                     <div
-                      class=" flex-1 flex flex-col justify-between border-t-2 border-gray-100 p-6 bg-white sm:p-10
+                      class=" h-full flex flex-col rounded-lg shadow-lg overflow-hidden lg:rounded-none lg:rounded-r-lg ">
+                      <div class=" flex-1 flex flex-col ">
+                        <div class=" bg-white px-6 py-10 ">
+                          <div>
+                            <h3 class=" text-center text-2xl font-medium text-gray-900 " id=" tier-scale ">
+                              Empresa
+                            </h3>
+                            <div class=" mt-4 flex items-center justify-center ">
+                              <span class=" px-3 flex items-start text-6xl tracking-tight text-gray-900 ">
+                                <span class=" mt-2 mr-2 text-4xl font-medium ">
+                                  S/
+                                </span>
+                                <span class=" font-extrabold ">
+                                  500
+                                </span>
+                              </span>
+                              <span class=" text-xl font-medium text-gray-500 ">
+                                /mes
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class=" flex-1 flex flex-col justify-between border-t-2 border-gray-100 p-6 bg-white sm:p-10
                       lg:p-6 xl:p-10 ">
-                      <ul class=" space-y-4 ">
-                        <li class=" flex items-start ">
-                          <div class=" flex-shrink-0 ">
-                            <!-- Heroicon name: outline/check -->
-                            <svg class=" flex-shrink-0 h-6 w-6 text-green-500 " xmlns=" http://www.w3.org/2000/svg "
-                              fill=" none " viewBox=" 0 0 24 24 " stroke=" currentColor " aria-hidden=" true ">
-                              <path stroke-linecap=" round " stroke-linejoin=" round " stroke-width=" 2 "
-                                d=" M5 13l4 4L19 7 " />
-                            </svg>
+                          <ul class=" space-y-4 ">
+                            <li class=" flex items-start ">
+                              <div class=" flex-shrink-0 ">
+                                <!-- Heroicon name: outline/check -->
+                                <svg class=" flex-shrink-0 h-6 w-6 text-green-500 " xmlns=" http://www.w3.org/2000/svg "
+                                  fill=" none " viewBox=" 0 0 24 24 " stroke=" currentColor " aria-hidden=" true ">
+                                  <path stroke-linecap=" round " stroke-linejoin=" round " stroke-width=" 2 "
+                                    d=" M5 13l4 4L19 7 " />
+                                </svg>
+                              </div>
+                              <p class=" ml-3 text-base font-medium text-gray-500 ">
+                                Locaciones ilimitadas
+                              </p>
+                            </li>
+
+                            <li class=" flex items-start ">
+                              <div class=" flex-shrink-0 ">
+                                <!-- Heroicon name: outline/check -->
+                                <svg class=" flex-shrink-0 h-6 w-6 text-green-500 " xmlns=" http://www.w3.org/2000/svg "
+                                  fill=" none " viewBox=" 0 0 24 24 " stroke=" currentColor " aria-hidden=" true ">
+                                  <path stroke-linecap=" round " stroke-linejoin=" round " stroke-width=" 2 "
+                                    d=" M5 13l4 4L19 7 " />
+                                </svg>
+                              </div>
+                              <p class=" ml-3 text-base font-medium text-gray-500 ">
+                                Unidades funcionales ilimitadas
+                              </p>
+                            </li>
+
+                            <li class=" flex items-start ">
+                              <div class=" flex-shrink-0 ">
+                                <!-- Heroicon name: outline/check -->
+                                <svg class=" flex-shrink-0 h-6 w-6 text-green-500 " xmlns=" http://www.w3.org/2000/svg "
+                                  fill=" none " viewBox=" 0 0 24 24 " stroke=" currentColor " aria-hidden=" true ">
+                                  <path stroke-linecap=" round " stroke-linejoin=" round " stroke-width=" 2 "
+                                    d=" M5 13l4 4L19 7 " />
+                                </svg>
+                              </div>
+                              <p class=" ml-3 text-base font-medium text-gray-500 h- ">
+                                Soporte técnico personalizado
+                              </p>
+
+
+                            </li>
+                            <li class=" flex items-start ">
+                              <div class=" flex-shrink-0 ">
+                                <!-- Heroicon name: outline/check -->
+                                <svg class=" flex-shrink-0 h-6 w-6 text-green-500 " xmlns=" http://www.w3.org/2000/svg "
+                                  fill=" none " viewBox=" 0 0 24 24 " stroke=" currentColor " aria-hidden=" true ">
+                                  <path stroke-linecap=" round " stroke-linejoin=" round " stroke-width=" 2 "
+                                    d=" M5 13l4 4L19 7 " />
+                                </svg>
+                              </div>
+                              <p class=" ml-3 text-base font-medium text-gray-500 ">
+                                Atención 24/7
+                              </p>
+
+                            </li>
+
+                          </ul>
+                          <div class=" mt-8 ">
+                            <div class=" rounded-lg shadow-md ">
+                              <a href=" https://forms.gle/U2wxt3agGdUXB1Cr5" target="_blank" class=" block w-full text-center rounded-lg border border-transparent bg-white px-6 py-3
+                      text-base font-medium text-celeste hover:bg-white " aria-describedby=" tier-scale ">
+                                Adquirir
+                              </a>
+                            </div>
                           </div>
-                          <p class=" ml-3 text-base font-medium text-gray-500 ">
-                            Locaciones ilimitadas
-                          </p>
-                        </li>
-
-                        <li class=" flex items-start ">
-                          <div class=" flex-shrink-0 ">
-                            <!-- Heroicon name: outline/check -->
-                            <svg class=" flex-shrink-0 h-6 w-6 text-green-500 " xmlns=" http://www.w3.org/2000/svg "
-                              fill=" none " viewBox=" 0 0 24 24 " stroke=" currentColor " aria-hidden=" true ">
-                              <path stroke-linecap=" round " stroke-linejoin=" round " stroke-width=" 2 "
-                                d=" M5 13l4 4L19 7 " />
-                            </svg>
-                          </div>
-                          <p class=" ml-3 text-base font-medium text-gray-500 ">
-                            Unidades funcionales ilimitadas
-                          </p>
-                        </li>
-
-                        <li class=" flex items-start ">
-                          <div class=" flex-shrink-0 ">
-                            <!-- Heroicon name: outline/check -->
-                            <svg class=" flex-shrink-0 h-6 w-6 text-green-500 " xmlns=" http://www.w3.org/2000/svg "
-                              fill=" none " viewBox=" 0 0 24 24 " stroke=" currentColor " aria-hidden=" true ">
-                              <path stroke-linecap=" round " stroke-linejoin=" round " stroke-width=" 2 "
-                                d=" M5 13l4 4L19 7 " />
-                            </svg>
-                          </div>
-                          <p class=" ml-3 text-base font-medium text-gray-500 h- ">
-                            Soporte técnico personalizado
-                          </p>
-
-
-                        </li>
-                        <li class=" flex items-start ">
-                          <div class=" flex-shrink-0 ">
-                            <!-- Heroicon name: outline/check -->
-                            <svg class=" flex-shrink-0 h-6 w-6 text-green-500 " xmlns=" http://www.w3.org/2000/svg "
-                              fill=" none " viewBox=" 0 0 24 24 " stroke=" currentColor " aria-hidden=" true ">
-                              <path stroke-linecap=" round " stroke-linejoin=" round " stroke-width=" 2 "
-                                d=" M5 13l4 4L19 7 " />
-                            </svg>
-                          </div>
-                          <p class=" ml-3 text-base font-medium text-gray-500 ">
-                            Atención 24/7
-                          </p>
-
-                        </li>
-
-                      </ul>
-                      <div class=" mt-8 ">
-                        <div class=" rounded-lg shadow-md ">
-                          <a href=" https://forms.gle/U2wxt3agGdUXB1Cr5" target="_blank"
-                            class=" block w-full text-center rounded-lg border border-transparent bg-white px-6 py-3
-                      text-base font-medium text-celeste hover:bg-white "
-                            aria-describedby=" tier-scale ">
-                            Adquirir
-                          </a>
                         </div>
                       </div>
                     </div>
@@ -941,71 +950,66 @@
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
+      </section>
 
 
 
-  <footer id=" footerSection " class=" bg-background " aria-labelledby=" footerHeading ">
-    <!-- This example requires Tailwind CSS v2.0+ -->
-    <footer class=" bg-white ">
-      <div class=" max-w-7xl mx-auto py-12 px-4 overflow-hidden sm:px-6 lg:px-8 ">
-        <nav class=" -mx-5 -my-2 flex flex-wrap justify-center " aria-label=" Footer ">
-          <div class=" px-5 py-2 ">
-            <a href=" # " class=" text-base text-gray-500 hover:text-gray-900 ">
-              ACERCA
-            </a>
-          </div>
+      <footer id=" footerSection " class=" bg-background " aria-labelledby=" footerHeading ">
+        <!-- This example requires Tailwind CSS v2.0+ -->
+        <footer class=" bg-white ">
+          <div class=" max-w-7xl mx-auto py-12 px-4 overflow-hidden sm:px-6 lg:px-8 ">
+            <nav class=" -mx-5 -my-2 flex flex-wrap justify-center " aria-label=" Footer ">
+              <div class=" px-5 py-2 ">
+                <a href=" # " class=" text-base text-gray-500 hover:text-gray-900 ">
+                  ACERCA
+                </a>
+              </div>
 
-          <div class=" px-5 py-2 ">
-            <a href=" # " class=" text-base text-gray-500 hover:text-gray-900 ">
-              PLANES
-            </a>
-          </div>
+              <div class=" px-5 py-2 ">
+                <a href=" # " class=" text-base text-gray-500 hover:text-gray-900 ">
+                  PLANES
+                </a>
+              </div>
 
-          <div class=" px-5 py-2 ">
-            <a href=" # " class=" text-base text-gray-500 hover:text-gray-900 ">
-              VENTAJAS
-            </a>
-          </div>
+              <div class=" px-5 py-2 ">
+                <a href=" # " class=" text-base text-gray-500 hover:text-gray-900 ">
+                  VENTAJAS
+                </a>
+              </div>
 
-          <div class=" px-5 py-2 ">
-            <a href=" # " class=" text-base text-gray-500 hover:text-gray-900 ">
-              CLIENTES
-            </a>
-          </div>
+              <div class=" px-5 py-2 ">
+                <a href=" # " class=" text-base text-gray-500 hover:text-gray-900 ">
+                  CLIENTES
+                </a>
+              </div>
 
-          <div class=" px-5 py-2 ">
-            <a href=" # " class=" text-base text-gray-500 hover:text-gray-900 ">
-              BLOCKCHAIN
-            </a>
-          </div>
+              <div class=" px-5 py-2 ">
+                <a href=" # " class=" text-base text-gray-500 hover:text-gray-900 ">
+                  BLOCKCHAIN
+                </a>
+              </div>
 
-          <div class=" px-5 py-2 ">
-            <a href=" # " class=" text-base text-gray-500 hover:text-gray-900 ">
-              Socios
-            </a>
-          </div>
-        </nav>
-        <div class=" mt-8 flex justify-center space-x-6 ">
-          <a href=" # " class=" text-gray-400 hover:text-gray-500 ">
-            <span class=" sr-only ">Facebook</span>
-            <svg class=" h-6 w-6 " fill=" currentColor " viewBox=" 0 0 24 24 " aria-hidden=" true ">
-              <path fill-rule=" evenodd "
-                d=" M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438
+              <div class=" px-5 py-2 ">
+                <a href=" # " class=" text-base text-gray-500 hover:text-gray-900 ">
+                  Socios
+                </a>
+              </div>
+            </nav>
+            <div class=" mt-8 flex justify-center space-x-6 ">
+              <a href=" # " class=" text-gray-400 hover:text-gray-500 ">
+                <span class=" sr-only ">Facebook</span>
+                <svg class=" h-6 w-6 " fill=" currentColor " viewBox=" 0 0 24 24 " aria-hidden=" true ">
+                  <path fill-rule=" evenodd " d=" M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438
                       9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195
                       2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22
-                      16.991 22 12z "
-                clip-rule=" evenodd " />
-            </svg>
-          </a>
+                      16.991 22 12z " clip-rule=" evenodd " />
+                </svg>
+              </a>
 
-          <a href=" # " class=" text-gray-400 hover:text-gray-500 ">
-            <span class=" sr-only ">Instagram</span>
-            <svg class=" h-6 w-6 " fill=" currentColor " viewBox=" 0 0 24 24 " aria-hidden=" true ">
-              <path fill-rule=" evenodd "
-                d=" M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902
+              <a href=" # " class=" text-gray-400 hover:text-gray-500 ">
+                <span class=" sr-only ">Instagram</span>
+                <svg class=" h-6 w-6 " fill=" currentColor " viewBox=" 0 0 24 24 " aria-hidden=" true ">
+                  <path fill-rule=" evenodd " d=" M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902
                       4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012
                       2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0
                       01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643
@@ -1022,18 +1026,16 @@
                       3.097 0 00-.748-1.15 3.098 3.098 0
                       00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135
                       0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0
-                      000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z "
-                clip-rule=" evenodd " />
-            </svg>
-          </a>
+                      000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z " clip-rule=" evenodd " />
+                </svg>
+              </a>
 
 
 
-          <a href=" # " class=" text-gray-400 hover:text-gray-500 ">
-            <span class=" sr-only ">GitHub</span>
-            <svg class=" h-6 w-6 " fill=" currentColor " viewBox=" 0 0 24 24 " aria-hidden=" true ">
-              <path fill-rule=" evenodd "
-                d=" M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483
+              <a href=" # " class=" text-gray-400 hover:text-gray-500 ">
+                <span class=" sr-only ">GitHub</span>
+                <svg class=" h-6 w-6 " fill=" currentColor " viewBox=" 0 0 24 24 " aria-hidden=" true ">
+                  <path fill-rule=" evenodd " d=" M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483
                       0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608
                       1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088
                       2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988
@@ -1041,42 +1043,71 @@
                       1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028
                       1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012
                       2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z "
-                clip-rule=" evenodd " />
-            </svg>
-          </a>
+                    clip-rule=" evenodd " />
+                </svg>
+              </a>
 
 
-        </div>
-        <p class=" mt-8 text-center text-base text-gray-400 ">
-          &copy; 2020 Lutimi, Inc. All rights reserved.
-        </p>
-      </div>
-    </footer>
+            </div>
+            <p class=" mt-8 text-center text-base text-gray-400 ">
+              &copy; 2020 Lutimi, Inc. All rights reserved.
+            </p>
+          </div>
+        </footer>
 
-  </footer>
-
-
-
-  <script src=" https://code.jquery.com/jquery-3.5.1.slim.min.js "
-    integrity=" sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj "
-    crossorigin=" anonymous "></script>
-
-  <!-- <script src=" src/functions.js "></script> -->
-  <script src=" src/main.js "></script>
-  <script src=" src/Class/user.js "></script>
-  <script src=" src/functions.js "> </script>
-  <script src=" https://unpkg.com/scrollreveal "></script>
+      </footer>
 
 
-  <script src=" https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js "
-    integrity=" sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN "
-    crossorigin=" anonymous "></script>
-  <script src=" https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js "
-    integrity=" sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV "
-    crossorigin=" anonymous "></script>
-  <script src=" https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.js "></script>
-  <script src=" src/Custom/modals.js "></script>
-  <script src=" src/form.js " ></script>
+
+      <script src=" https://code.jquery.com/jquery-3.5.1.slim.min.js "
+        integrity=" sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj "
+        crossorigin=" anonymous "></script>
+
+      <!-- <script src=" src/functions.js "></script> -->
+      <script src=" src/main.js "></script>
+      <script src=" src/Class/user.js "></script>
+      <script src=" src/functions.js "> </script>
+      <script src=" https://unpkg.com/scrollreveal "></script>
+
+
+      <script src=" https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js "
+        integrity=" sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN "
+        crossorigin=" anonymous "></script>
+   
+      <script src=" https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.js "></script>
+      <script src=" src/Custom/modals.js "></script>
+      <script src=" src/form.js "></script>
+      <script src="infiniteslidev2.js"></script>
+      <script type="text/javascript">
+        $(function () {
+          $('.scroll1').infiniteslide({
+            speed: 20,
+            direction: 'left'
+          });
+          $('.scroll2').infiniteslide({
+            speed: 20,
+            direction: 'right'
+          });
+          $('.scroll3').infiniteslide({
+            speed: 300,
+            direction: 'down'
+          });
+          $('.scroll4').infiniteslide({
+            pauseonhover: false
+          });
+          $('.scroll5').infiniteslide({
+            speed: 50
+          });
+          $('.scroll6').infiniteslide({
+            speed: 200,
+            responsive: true
+          });
+          $('.scroll7').infiniteslide({
+            direction: 'right',
+            clone: 10
+          });
+        });
+      </script>
 
 </body>
 
