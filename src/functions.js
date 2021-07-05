@@ -122,4 +122,4 @@ close2.addEventListener('click', function() {
     window.location.reload()
 });
 
-console.log(username);
+// console.log(username);

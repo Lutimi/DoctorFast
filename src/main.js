@@ -28,11 +28,15 @@ const Init = () => {
 };
 
 const LoadDataBaseFromJSON = () => {
-    $.getJSON("../Data.json", function(registers) {
+    var data = $.getJSON("../Data.json", function(registers) {
+        console.log(registers[0])
         let registersJSON = ConvertToString(registers);
-        SetLocalStorage(LocalStorageGlobalVariables.All_Registrations, registersJSON);
+        console.log(typeof JSON.parse(registersJSON))
+        localStorage.setItem('registrations', JSON.stringify(registersJSON))
     });
+    return data
 };
+
 
 
 
@@ -57,19 +61,3 @@ const RenderRegistrationList = () => {
     //renderizo en mi web
     $("#showUser").html(registerToRender);
 };
-
-const ProductCard = (product) => `<div class="card" id=${
-    "card-product-" + product.id
-  } style="width: 18rem;">
-          <div class="card-body">
-            <h5 class="card-title">${product.nombre2}</h5>
-            <h6 class="card-subtitle mb-2 text-muted">Stock: ${
-              product.apellido2
-            }</h6>
-         
-            <a onclick="AddProduct(${
-              product.id
-            })" class="btn btn-primary">Agregar al carrito</a>
-            
-          </div>
-        </div>`;
